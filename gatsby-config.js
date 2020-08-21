@@ -70,5 +70,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+        resolve: `gatsby-plugin-google-fonts`,
+        options: {
+          fonts: [
+            `roboto`,
+            `roboto mono` // you can also specify font weights and styles
+          ],
+          display: 'swap'
+        }
+      },
   ],
 }
