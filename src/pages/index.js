@@ -9,10 +9,13 @@ import Rule from '../components/rule'
 import Section from '../components/section'
 
 import Hero from '../components/homeHeader'
+import BlogList from '../components/blogList'
+import BlogPreview from '../components/blogPreview'
 
 const Homepage = ({ data }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const posts = data.allMarkdownRemark.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
+
+  console.log(posts)
 
   return (
     <Layout>
@@ -29,7 +32,9 @@ const Homepage = ({ data }) => {
             <Rule />
             <Padding />
         <Section heading='Playground'>
-            blogs here
+            <BlogList>
+                {posts.map((post) => <BlogPreview key={post.title} title={post.title} date={post.date} slug={post.slug}/>)}
+            </BlogList>
         </Section>
             <Padding />
         <Section heading='My evolution'>

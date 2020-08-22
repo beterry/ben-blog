@@ -1,0 +1,27 @@
+ol{
+    margin: 1.5rem 0;
+}
+
+ol li{
+   margin: .5rem 0; 
+}
+
+.gatsby-resp-image-wrapper{
+    margin: 2.25rem 0;
+    border-radius: .125rem;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,.25);
+}
+
+.gatsby-highlight{
+    margin-top: 2.25rem;
+}
+
+a{
+    color: #75A478;
+    text-decoration: none;;
+}
+
+a:hover{
+    text-decoration: underline;
+}
