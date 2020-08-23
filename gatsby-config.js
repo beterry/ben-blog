@@ -75,7 +75,8 @@ module.exports = {
         options: {
           fonts: [
             `roboto`,
-            `roboto mono` // you can also specify font weights and styles
+            `roboto mono`, // you can also specify font weights and styles
+            `barlow\:300,400,500,700,900`,
           ],
           display: 'swap'
         }

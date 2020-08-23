@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import "normalize.css"
 import '../styles/ben-fonts.css'
+import '../styles/base.css'
 
 import TopBar from './topBar'
 
