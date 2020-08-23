@@ -1,5 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
+import styled from 'styled-components'
+
+import colors from '../styles/colors'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,6 +14,8 @@ import '../styles/blog-styles.css'
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
 
+  console.log(post)
+
   return (
     <Layout>
       <SEO
@@ -20,7 +25,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <article>
             <Padding />
         <header>
-          <h1>{post.frontmatter.title}</h1>
+            <Icon src={post.frontmatter.icon.publicURL} alt='' />
+            <h1>{post.frontmatter.title}</h1>
+            <DisplayDate>{post.frontmatter.date}</DisplayDate>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
             <Padding />
@@ -46,7 +53,17 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        icon {
+            publicURL
+        }
       }
     }
   }
+`
+const Icon = styled.img`
+    margin-bottom: 1rem;
+`
+
+const DisplayDate = styled.p`
+    color: ${colors.p.light};
 `

@@ -2,6 +2,7 @@
 title: Sourcing Data from Contentful using Gatsby
 date: "2020-08-12"
 description: "A small project to underdtand the process of sourcing data from Contentful"
+icon: "./contentful-logo.svg"
 ---
 
 ## Why I’m interested in Contentful
