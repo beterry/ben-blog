@@ -13,16 +13,16 @@ const Button = styled.button`
     padding: 0 1rem;
     flex: 0 0 auto;
     font-size: .875rem;
-    letter-spacing: .7px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     background: none;
 `
 
 const ContainedButton = styled(Button)`
-    background: ${props => props.primary ? colors.s.main : colors.p.dark};
-    color: white;
+    background: ${props => props.primary ? colors.s.main : colors.p.light};
+    color: black;
     &:hover{
         filter: brightness(120%);
     }

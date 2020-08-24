@@ -7,7 +7,7 @@ export default function homeHeader() {
     return (
         <Header>
             <Intro>Hi, my name is Ben.</Intro>
-            <Heading>I'm a designerveloper.</Heading>
+            <Heading>I'm a designer&shy;veloper.</Heading>
             <h3>design • er • vel • up • er</h3>
             <p>A strange species of creative professional that evolved from a graphic designer into a front-end developer. Has a great love for designing and coding great web experiences.</p>
         </Header>
@@ -25,10 +25,14 @@ const Intro = styled.h1`
     display: inline-flex;
     margin: 0;
     padding: .5rem 1rem;
+    
 `
 
 const Heading = styled.h2`
     font-size: 4.5rem;
     font-weight: 700;
     margin: 2rem 0;
+    @media screen and (max-width: 28rem){
+        font-size: 3.5rem;
+    }
 `

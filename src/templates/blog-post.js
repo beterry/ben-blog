@@ -19,7 +19,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   return (
     <Layout>
       <SEO
-        title={`Ben Terry | ${post.frontmatter.title}`}
+        title={`${post.frontmatter.title}`}
         description={post.frontmatter.description || post.excerpt}
       />
       <article>
@@ -65,5 +65,5 @@ const Icon = styled.img`
 `
 
 const DisplayDate = styled.p`
-    color: ${colors.p.light};
+    color: ${colors.gray[50]};
 `

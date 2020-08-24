@@ -1,7 +1,7 @@
 const colors = {
     p: {
         main: '#37474F',
-        light: '#62727B',
+        light: '#638395',
         dark: '#102027',
     },
     s: {

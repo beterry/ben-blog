@@ -36,6 +36,9 @@ export default class TopBar extends Component {
 
 const Navigation = styled.nav`
     background: ${colors.p.dark};
+    a{
+        text-decoration: none;
+    }
     a:hover{
         text-decoration: none;
     }

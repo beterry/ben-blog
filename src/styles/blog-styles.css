@@ -18,11 +18,7 @@ ol li{
 }
 
 a{
-    color: #75A478;
-    text-decoration: none;;
-}
-
-a:hover{
+    color: #5D9DC1;
     text-decoration: underline;
 }
 

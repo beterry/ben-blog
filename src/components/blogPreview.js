@@ -50,7 +50,7 @@ const Title = styled.div`
         margin: 0;
     }
     p{
-        color: ${colors.p.light};
+        color: ${colors.gray[50]};
         margin-top: .375rem;
     }
     h3{
