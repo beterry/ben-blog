@@ -25,3 +25,13 @@ a{
 a:hover{
     text-decoration: underline;
 }
+
+blockquote{
+    margin-block-start: 2rem;
+    margin-block-end: 2rem;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-left: 2rem; 
+    border-left: 1px solid rgba(0,0,0,.1);
+    color: rgba(0,0,0,.6);
+}

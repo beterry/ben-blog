@@ -20,6 +20,7 @@ const Header = styled.header`
 
 const Intro = styled.h1`
     font-size: 1.875rem;
+    font-weight: 600;
     background: ${colors.s.main};
     display: inline-flex;
     margin: 0;
@@ -28,5 +29,6 @@ const Intro = styled.h1`
 
 const Heading = styled.h2`
     font-size: 4.5rem;
+    font-weight: 700;
     margin: 2rem 0;
 `

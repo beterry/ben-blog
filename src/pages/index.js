@@ -19,7 +19,7 @@ const Homepage = ({ data }) => {
 
   return (
     <Layout>
-        <SEO title="All posts" />
+        <SEO title="Portfolio" />
             <Padding />
         <Hero />
             <Padding />
@@ -33,7 +33,15 @@ const Homepage = ({ data }) => {
             <Padding />
         <Section heading='Playground'>
             <BlogList>
-                {posts.map((post) => <BlogPreview key={post.title} title={post.title} date={post.date} slug={post.slug}/>)}
+                {posts.map((post) => 
+                    <BlogPreview
+                        key={post.title}
+                        title={post.title}
+                        date={post.date}
+                        icon={post.icon.publicURL}
+                        slug={post.slug}
+                    />
+                )}
             </BlogList>
         </Section>
             <Padding />
@@ -72,6 +80,9 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            icon {
+                publicURL
+            }
           }
         }
       }

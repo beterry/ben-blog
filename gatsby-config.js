@@ -1,15 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Ben Terry`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Ben Terry`,
+      summary: `A creative professional who enjoys designing and developing great web experiences`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A portfolio website where I share recent projects and experiments`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
-    social: {
-      twitter: `kylemathews`,
-    },
   },
   plugins: [
     {
@@ -60,13 +57,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Ben Terry Portfolio`,
+        short_name: `Ben`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#A5D6A7`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `src/images/favicon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -76,7 +73,7 @@ module.exports = {
           fonts: [
             `roboto`,
             `roboto mono`, // you can also specify font weights and styles
-            `barlow\:300,400,500,700,900`,
+            `barlow\:300,400,500,600,700,900`,
           ],
           display: 'swap'
         }
