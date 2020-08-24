@@ -61,6 +61,7 @@ export const pageQuery = graphql`
   }
 `
 const Icon = styled.img`
+    width: 1.5rem;
     margin-bottom: 1rem;
 `
 

@@ -34,7 +34,7 @@ const Preview = styled.li`
 
 const IconWrapper = styled.div`
     width: 1.5rem;
-    margin: .25rem 1.5rem 0 0;
+    margin: .3rem 1.5rem 0 0;
     flex-shrink: 0;
     img{
         width: 100%;
@@ -54,6 +54,6 @@ const Title = styled.div`
         margin-top: .375rem;
     }
     h3{
-        line-height: 1;
+        font-size: 1.25rem;
     }
 `
