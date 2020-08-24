@@ -23,14 +23,24 @@ export default function blogPreview({ title, date, icon, slug }) {
 const Preview = styled.li`
     display: flex;
     border-bottom: 1px solid ${colors.gray[10]};
-    padding: 1rem 0;
+    padding: 1rem;
+    &:hover{
+        background: ${colors.gray[5]};
+    }
+    @media screen and (max-width: 37.5rem){
+        flex-direction: column;
+    }
 `
 
 const IconWrapper = styled.div`
     width: 1.5rem;
     margin: .25rem 1.5rem 0 0;
+    flex-shrink: 0;
     img{
         width: 100%;
+    }
+    @media screen and (max-width: 37.5rem){
+        margin: 0 0 .5rem 0;
     }
 `
 
