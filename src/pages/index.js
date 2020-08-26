@@ -17,6 +17,7 @@ import {ContainedButton} from '../components/buttons'
 
 const Homepage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
+  const works = data.allMdx.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
 
   return (
     <Layout>
@@ -27,7 +28,7 @@ const Homepage = ({ data }) => {
             <Rule />
             <Padding />
         <Section heading='Recent work'>
-            recent work here
+            {works.map(work => <p key={work.title}>{work.title}</p>)}
         </Section>
             <Padding />
             <Rule />
@@ -85,6 +86,18 @@ export const pageQuery = graphql`
             icon {
                 publicURL
             }
+          }
+        }
+      }
+    }
+    allMdx {
+      edges {
+        node {
+          frontmatter {
+            title
+          }
+          fields {
+            slug
           }
         }
       }
