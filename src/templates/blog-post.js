@@ -14,8 +14,6 @@ import '../styles/blog-styles.css'
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
 
-  console.log(post)
-
   return (
     <Layout>
       <SEO
@@ -25,7 +23,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <article>
             <Padding />
         <header>
-            <Icon src={post.frontmatter.icon.publicURL} alt='' />
             <h1>{post.frontmatter.title}</h1>
             <DisplayDate>{post.frontmatter.date}</DisplayDate>
         </header>
@@ -59,10 +56,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
-const Icon = styled.img`
-    width: 1.5rem;
-    margin-bottom: 1rem;
 `
 
 const DisplayDate = styled.p`

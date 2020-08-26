@@ -31,7 +31,7 @@ const Intro = styled.h1`
 const Heading = styled.h2`
     font-size: 4.5rem;
     font-weight: 700;
-    margin: 2rem 0;
+    margin: 1rem 0;
     @media screen and (max-width: 28rem){
         font-size: 3.5rem;
     }

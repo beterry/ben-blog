@@ -9,7 +9,6 @@ const Button = styled.button`
     justify-content: center;
     min-height: 2.25rem;
     min-width: 4rem;
-    border-radius: .25rem;
     padding: 0 1rem;
     flex: 0 0 auto;
     font-size: .875rem;
@@ -24,7 +23,7 @@ const ContainedButton = styled(Button)`
     background: ${props => props.primary ? colors.s.main : colors.p.light};
     color: black;
     &:hover{
-        filter: brightness(120%);
+        background: ${colors.s.light};
     }
 `
 

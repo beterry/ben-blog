@@ -18,8 +18,6 @@ import {ContainedButton} from '../components/buttons'
 const Homepage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
 
-  console.log(posts)
-
   return (
     <Layout>
         <SEO title="Portfolio" />
