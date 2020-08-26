@@ -4,7 +4,7 @@ import {Link} from 'gatsby'
 
 import colors from '../styles/colors'
 
-export default function blogPreview({ title, date, icon, slug }) {
+export default function BlogPreview({ title, date, icon, slug }) {
     return (
         <Link to={slug}>
             <Preview>

@@ -16,9 +16,9 @@ import BlogPreview from '../components/blogPreview'
 import {ContainedButton} from '../components/buttons'
 
 const Homepage = ({ data }) => {
-  const posts = data.allMdx.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
-
-  console.log(data)
+  const posts = data.blogQuery.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
+  const works = data.workQuery.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
+    console.log(posts, works)
 
   return (
     <Layout>
@@ -29,7 +29,9 @@ const Homepage = ({ data }) => {
             <Rule />
             <Padding />
         <Section heading='Recent work'>
-            Work goes here
+                {works.map((work) => 
+                    <Link key={work.title} to={work.slug}><li key={work.title}>{work.title}</li></Link>
+                )}
         </Section>
             <Padding />
             <Rule />
@@ -37,7 +39,13 @@ const Homepage = ({ data }) => {
         <Section heading='Playground'>
             <BlogList>
                 {posts.map((post) => 
-                    <Link to={post.slug}><li key={post.title}>{post.title}</li></Link>
+                    <BlogPreview
+                        title={post.title}
+                        date={post.date}
+                        icon={post.icon.publicURL}
+                        slug={post.slug}
+                        key={post.title}
+                    />
                 )}
             </BlogList>
         </Section>
@@ -61,26 +69,42 @@ const Homepage = ({ data }) => {
 export default Homepage
 
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-          }
-          fields {
-            slug
-          }
+    query {
+        siteQuery: site {
+            siteMetadata {
+                title
+            }
         }
-      }
+        workQuery: allMdx(filter: {fields: {source: {eq: "work"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+            edges {
+                node {
+                    frontmatter {
+                        date(formatString: "MMMM DD, YYYY")
+                        title
+                    }
+                    fields {
+                        slug
+                    }
+                }
+            }
+        }
+        blogQuery: allMdx(filter: {fields: {source: {eq: "blog"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+            edges {
+                node {
+                    frontmatter {
+                        date(formatString: "MMMM DD, YYYY")
+                        title
+                        icon {
+                            publicURL
+                        }
+                    }
+                    fields {
+                        slug
+                    }
+                }
+            }
+        }
     }
-  }
 `
 
 const ResumeButton = styled(ContainedButton)`
