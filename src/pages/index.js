@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
@@ -16,8 +16,9 @@ import BlogPreview from '../components/blogPreview'
 import {ContainedButton} from '../components/buttons'
 
 const Homepage = ({ data }) => {
-  const posts = data.allMarkdownRemark.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
-  const works = data.allMdx.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
+  const posts = data.allMdx.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
+
+  console.log(data)
 
   return (
     <Layout>
@@ -28,7 +29,7 @@ const Homepage = ({ data }) => {
             <Rule />
             <Padding />
         <Section heading='Recent work'>
-            {works.map(work => <p key={work.title}>{work.title}</p>)}
+            Work goes here
         </Section>
             <Padding />
             <Rule />
@@ -36,13 +37,7 @@ const Homepage = ({ data }) => {
         <Section heading='Playground'>
             <BlogList>
                 {posts.map((post) => 
-                    <BlogPreview
-                        key={post.title}
-                        title={post.title}
-                        date={post.date}
-                        icon={post.icon.publicURL}
-                        slug={post.slug}
-                    />
+                    <Link to={post.slug}><li key={post.title}>{post.title}</li></Link>
                 )}
             </BlogList>
         </Section>
@@ -72,28 +67,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
-          fields {
-            slug
-          }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
-            title
-            description
-            icon {
-                publicURL
-            }
-          }
-        }
-      }
-    }
-    allMdx {
-      edges {
-        node {
-          frontmatter {
             title
           }
           fields {
