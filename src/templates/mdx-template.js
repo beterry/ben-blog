@@ -32,6 +32,8 @@ export default function PageTemplate({ data: { mdx } }) {
                 <MDXProvider components={shortcodes}>
                     <MDXRenderer>{mdx.body}</MDXRenderer>
                 </MDXProvider>
+
+                    <Padding />
             </article>
             
         </Layout>

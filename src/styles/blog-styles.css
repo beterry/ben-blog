@@ -1,16 +1,18 @@
-ol{
-    margin: 1.5rem 0;
+ol, ul{
+    margin: 2rem 0;
 }
 
-ol li{
-   margin: .5rem 0; 
+ol li, ul li{
+   margin: .75rem 0; 
+   line-height: 1.5;
 }
 
 .gatsby-resp-image-wrapper{
     margin: 2.25rem 0;
     border-radius: .125rem;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,.25);
+    /* box-shadow: 0 0 10px rgba(0,0,0,.25); */
+    border: 1px solid #a7a7a7;
 }
 
 .gatsby-highlight{
