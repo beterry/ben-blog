@@ -50,11 +50,11 @@ It was important to separate the calculations into different sections so the use
 
 At the bottom of the page, the call-to-action section not only offers a ‘sign up’ button, but also an ‘email me results’ button. By choosing the ‘Email Me Results’ button, the user would fill in their email address and be mailed their unique ROI calculation in a spreadsheet. This option requires less commitment than signing up on the spot and would entice users to provide their email address for future follow-ups.
 
-## Prototyping the designed
+## Prototyping the design
 
 My preferred prototyping software is Adobe XD. I used this software to design the prototype.
 
-SCREENSHOT
+![Prototype](./proto.jpg)
 
 ## Developing for practice
 
