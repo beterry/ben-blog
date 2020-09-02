@@ -15,7 +15,9 @@ export default function homeHeader() {
 }
 
 const Header = styled.header`
-
+    h3{
+        font-style: italic;
+    }
 `
 
 const Intro = styled.h1`

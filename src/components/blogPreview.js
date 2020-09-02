@@ -24,6 +24,7 @@ const Preview = styled.li`
     display: flex;
     border-bottom: 1px solid ${colors.gray[10]};
     padding: 1rem;
+    margin: 0;
     &:hover{
         background: ${colors.gray[5]};
     }

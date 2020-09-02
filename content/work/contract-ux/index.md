@@ -1,0 +1,116 @@
+---
+title: Updating Mail Shark’s Customer Portal
+description: A redesign of Mail Shark's customer portal
+date: "2020-09-01"
+---
+
+## About Mail Shark’s customer portal
+
+Mail Shark is an industry-leading direct mail and print company located in Mohnton, Pennsylvania. They offer many different services including unique, pay-weekly mailing programs and commercial printing. After enrolling in a program at Mail Shark, a customer gets access to an online portal where they can view contract details, upload files, and much more.
+
+For Mail Shark’s marketing department, in 2020, redesigning the customer portal was a priority. As UI/UX Designer, I was responsible for the planning, designing, and developing the prototype for the new and improved customer experience. 
+
+## Planning
+
+### Stakeholder Meeting
+
+The purpose of the stakeholder meeting, which involved the President of Mail Shark, the VP of Business Operations, the VP of Marketing, the Creative Manager and myself, was to strategize about project priorities and goals.
+
+#### Minimum viable product
+
+The ability for a customer to view their contracts online was the largest and most important feature of the portal. It was decided that this feature would be the minimum viable product for the new design. We would redesign, develop, and launch the new contract viewing experience first and add new features, also redesigned, at a later date.
+
+#### Goals
+
+1. Provide an easy way for customers to view campaign and contract information
+2. Allow a customer with multiple locations/stores to see all their campaigns in one place
+3. Create a modular design pattern that is easy to expand in the future with more information and features
+
+### Problems with the existing interface
+
+![Old interface](./old.png)
+
+#### Not mobile friendly
+
+The existing design did not scale to mobile. We wanted our customer’s to have the ability to view their contract information on the go and on any screen.
+
+#### Poor organization
+
+The contract viewing experience, previously, was very poorly organized. 
+
+1. When the user unfolded the contract list, it was displayed showing the oldest contracts first. For many customers, who have been with Mail Shark for 5+ years, this meant scrolling through several dozen completed contracts to view the most recent entries. 
+2. Completed contracts were shown by default. While there are situations where a customer would want to view a completed contract’s details, the vast majority of customers only care to view contracts that are ongoing or pending approval.
+3. The displayed contract name included the mailing quantity, start date, and status. Bunching all of this information into the title of the contract was confusing for the user.
+
+#### Branding
+
+The old portal’s design was outdated (it was created in 2010) and included no current branding from the website. The online portal and Mail Shark’s website looked completely different which was confusing for users. 
+
+### Wireframing
+
+During the wireframing process, I brainstormed low fidelity features, layouts and components which would solve the existing interface’s problems and accomplish the goals we discussed in the stakeholder meeting.
+
+![Wireframe of contract list](./wire-1.jpg)
+![Wireframe of contract details](./wire-2.jpg)
+
+#### Designing for mobile screens
+
+While wireframing, I made sure to design for mobile screens first. I wanted to ensure all the contract information was readily available and easy to access.
+
+I planned to display the contracts as a list on small screens and expand the information to a table on larger screens.
+
+#### Improving the contract list
+
+I planned to add these new features to the interface to make the contract list easier to read and navigate:
+
+1. By default, the list is sorted with most recent contracts at the top.
+2. By default, completed contracts are hidden. This allows the users to more easily view the contracts that are currently ongoing or pending approval. A “show completed” button would be under the initially shown contracts.
+3. On mobile screens, users sort the list with a dropdown selection at the top. When viewing the table, the user sorts by clicking the column heading.
+4. Contract details (quantity, starting date, business) are separated into rows and columns.
+
+#### Planning for future features
+To allow for future feature additions, I wireframed a layout which uses a navigation drawer and app bar. The easily expandable navigation drawer would remain static throughout the customer portal, linking the features together. The app bar contains contextual buttons which can be changed to accommodate any new features and controls.
+
+## Designing the new interface
+
+My preferred prototyping software is Adobe XD. I used this software to design the prototype.
+
+![XD mockup of contract list](./proto-1.jpg)
+![XD mockup of contract details](./proto-2.jpg)
+
+### Material Design
+
+Google’s Material Design is a wonderful design system for creating great user interfaces. To build the portal’s interface, I used Material Design’s extensive guides to research component best practices, behavior, and specs.
+
+### Before and after
+
+![Screenshot of before and after](./before-after.jpg)
+
+## Developing the prototype
+
+Although XD has powerful prototyping features, I developed a functional prototype to more adequately show the effectiveness of the new interface.
+
+View the developed prototype [here](https://beterry.github.io/contract-ux/).
+
+### Technology used
+
+- React
+- React-router
+- Sass
+- Moment.js
+- Numeral.js
+
+### Interesting code snippets
+
+View the entire Github repo [here](https://github.com/beterry/contract-ux).
+
+#### Static data
+
+The prototype did not consume an API. It relied on local JSON data for information to display.
+
+#### Sorting contracts
+
+#### Application state
+
+## Final Thoughts
+Overall, I enjoyed the challenge of thinking through the contract viewing experience and reorganizing the data to improve the interface. In the future, I look forward to expanding this design with new features.
