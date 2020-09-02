@@ -69,7 +69,7 @@ const Logo = styled.div`
     display: flex;
     align-items: center;
     p{
-        font-family: 'Barlow', sans-serif;
+        font-family: 'Raleway', sans-serif;
         font-weight: 700;
         color: ${colors.s.main};
         margin: 0;

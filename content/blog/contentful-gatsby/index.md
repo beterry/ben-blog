@@ -51,7 +51,7 @@ The components were styled with CSS modules.
 
 As a placeholder for the information I would eventually source from Contentful, I used static strings and object arrays to develop the prototype.
 
-```javascript
+```js
 const products = [
     {
         name: 'Garmin Forerunner 245',
@@ -127,7 +127,7 @@ After the content was created, it was time to query the data from Contentful and
 
 Gatsby has a plugin which allows for data to be queried from Contentful.
 
-```
+```js
 npm install --save gatsby-source-contentful
 ```
 
@@ -135,7 +135,7 @@ npm install --save gatsby-source-contentful
 
 Contentful requires you to use an API key to access the content from your space. I did not want to expose the API key to source control, so I created a .env file to pass the key to the build process.
 
-```
+```js
 CONTENTFUL_ACCESS_TOKEN=aha8f2s4s2b5n4zn2ufg8h4
 ```
 
@@ -148,7 +148,7 @@ Gatsby plugins are easily configurable in the gatsby-config.js file. The gatsby-
 
 I previously set up these two private variables in .env.development and can access them using dotenv (which is installed with Gatsby by default).
 
-```javascript
+```js
 {
     resolve: `gatsby-source-contentful`,
     options: {
@@ -174,7 +174,7 @@ Using this tool, I experimented with composing different queries (made available
 
 In index.js, I then added the page data query and logged the result to my console to check the result was correct.
 
-```javascript
+```js
 //I used graphiQL to understand what I was receiving from the API
 export const pageQuery = graphql`
     query MyQuery {
@@ -209,7 +209,7 @@ export const pageQuery = graphql`
 
 To make the query data easier to work with, I mapped the product data to a new array and destructured the heading and subheading.
 
-```javascript
+```js
 //map nodes from query data to a new array
 const products = data.allContentfulProduct.edges.map(edge => edge.node)
 
@@ -221,7 +221,7 @@ const {heroHeading, heroSubtext} = data.allContentfulWebsitePage.edges[0].node
 
 I then replaced the static data with the data I received from Contentful!
 
-```javascript
+```js
 <Hero 
     heading={heroHeading}
     copy={heroSubtext}

@@ -8,7 +8,7 @@ export default function homeHeader() {
         <Header>
             <Intro>Hi, my name is Ben.</Intro>
             <Heading>I'm a designer&shy;veloper.</Heading>
-            <h3>design • er • vel • up • er</h3>
+            <h3>design•er•vel•up•er</h3>
             <p>A strange species of creative professional that evolved from a graphic designer into a front-end developer. Has a great love for designing and coding great web experiences.</p>
         </Header>
     )

@@ -83,6 +83,7 @@ module.exports = {
                     `roboto`,
                     `roboto mono`, // you can also specify font weights and styles
                     `barlow\:300,400,500,600,700,900`,
+                    `raleway\:300,300i,400,400i,500,500i,600,600i,700,700i,900,900i`,
                 ],
                 display: 'swap'
             }
