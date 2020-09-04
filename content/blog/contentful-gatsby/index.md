@@ -3,6 +3,8 @@ title: Sourcing Data from Contentful using Gatsby
 date: "2020-08-12"
 description: "A small project to underdtand the process of sourcing data from Contentful"
 icon: "./contentful-logo.svg"
+code: "https://github.com/beterry/contentful-lp"
+deployed: "https://unruffled-booth-0069b7.netlify.app/"
 ---
 
 ## Why I’m interested in Contentful

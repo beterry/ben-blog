@@ -3,6 +3,8 @@ title: Developing a Marketo template styled with Bootstrap
 date: "2020-08-24"
 description: "A small project I designed to learn the development process of creating a Marketo guided template"
 icon: "./bootstrap-logo.svg"
+code: "https://github.com/beterry/ms-bootstrap"
+deployed: "https://go.themailshark.com/ben-playground.html"
 ---
 
 ## Marketo guided templates

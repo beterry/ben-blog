@@ -16,6 +16,7 @@ import '../styles/blog-styles.css'
 const shortcodes = { Link } // Provide common components here
 
 export default function PageTemplate({ data: { mdx } }) {
+    console.log(mdx.frontmatter)
     return (
         <Layout>
             <SEO
@@ -29,6 +30,14 @@ export default function PageTemplate({ data: { mdx } }) {
                     <DisplayDate>{mdx.frontmatter.date}</DisplayDate>
                 </header>
                 
+                {mdx.frontmatter.code ? 
+                    <div>
+                        <a href={mdx.frontmatter.code}>{mdx.frontmatter.code}</a>    
+                        <a href={mdx.frontmatter.deployed}>{mdx.frontmatter.deployed}</a>    
+                    </div>:
+                    null
+                }
+
                 <MDXProvider components={shortcodes}>
                     <MDXRenderer>{mdx.body}</MDXRenderer>
                 </MDXProvider>
@@ -49,6 +58,8 @@ export const pageQuery = graphql`
         title
         description
         date(formatString: "MMMM DD, YYYY")
+        code
+        deployed
       }
     }
   }
