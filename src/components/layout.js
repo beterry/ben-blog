@@ -20,6 +20,6 @@ export default Layout
 
 const Main = styled.main`
     width: 80%;
-    max-width: 768px;
+    max-width: 1200px;
     margin: 0 auto;
 `

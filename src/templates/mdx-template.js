@@ -5,18 +5,25 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
 import styled from 'styled-components'
 
+//layout components
 import Layout from "../components/layout"
+import BlogLayout from '../components/layouts/blogBody'
+
+//utility components
 import SEO from "../components/seo"
 import Padding from '../components/padding'
 
-import colors from '../styles/colors'
+//components
+import ImportantLinks from '../components/importantLinks'
 
+//import styles
+import colors from '../styles/colors'
 import '../styles/blog-styles.css'
 
 const shortcodes = { Link } // Provide common components here
 
 export default function PageTemplate({ data: { mdx } }) {
-    console.log(mdx.frontmatter)
+    // console.log(mdx.frontmatter)
     return (
         <Layout>
             <SEO
@@ -24,25 +31,41 @@ export default function PageTemplate({ data: { mdx } }) {
                 description={mdx.frontmatter.description}
             />
             <article>
-                    <Padding />
+                <Padding />
                 <header>
                     <h1>{mdx.frontmatter.title}</h1>
                     <DisplayDate>{mdx.frontmatter.date}</DisplayDate>
                 </header>
                 
-                {mdx.frontmatter.code ? 
-                    <div>
-                        <a href={mdx.frontmatter.code}>{mdx.frontmatter.code}</a>    
-                        <a href={mdx.frontmatter.deployed}>{mdx.frontmatter.deployed}</a>    
-                    </div>:
-                    null
-                }
+                <Padding />
 
-                <MDXProvider components={shortcodes}>
-                    <MDXRenderer>{mdx.body}</MDXRenderer>
-                </MDXProvider>
-
-                    <Padding />
+                <BlogLayout>
+                    <section>
+                        {mdx.frontmatter.code ? 
+                            <ImportantLinks
+                                links={[
+                                    {
+                                        title: 'Code on Github',
+                                        url: mdx.frontmatter.code
+                                    },
+                                    {
+                                        title: 'Live prototype',
+                                        url: mdx.frontmatter.deployed
+                                    }
+                                ]}
+                            />:
+                            null
+                        }
+                    </section>
+                    
+                    <section>
+                        <MDXProvider components={shortcodes}>
+                            <MDXRenderer>{mdx.body}</MDXRenderer>
+                        </MDXProvider>
+                    </section>
+                    
+                </BlogLayout>
+                <Padding />
             </article>
             
         </Layout>
