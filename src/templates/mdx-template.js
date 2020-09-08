@@ -18,7 +18,7 @@ import ImportantLinks from '../components/importantLinks'
 
 //import styles
 import colors from '../styles/colors'
-import '../styles/blog-styles.css'
+import ContentStyleWrapper from '../styles/content-style-wrapper'
 
 const shortcodes = { Link } // Provide common components here
 
@@ -59,9 +59,11 @@ export default function PageTemplate({ data: { mdx } }) {
                     </section>
                     
                     <section>
-                        <MDXProvider components={shortcodes}>
-                            <MDXRenderer>{mdx.body}</MDXRenderer>
-                        </MDXProvider>
+                        <ContentStyleWrapper>
+                            <MDXProvider components={shortcodes}>
+                                <MDXRenderer>{mdx.body}</MDXRenderer>
+                            </MDXProvider>
+                        </ContentStyleWrapper>
                     </section>
                     
                 </BlogLayout>
@@ -89,5 +91,8 @@ export const pageQuery = graphql`
 `
 
 const DisplayDate = styled.p`
-    color: ${colors.gray[50]};
+    color: ${colors.green.main};
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
 `

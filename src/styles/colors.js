@@ -9,6 +9,14 @@ const colors = {
         light: '#D7FFD9',
         dark: '#75A478',
     },
+    blue: {
+        main: '#118AB2',
+        light: '#38B1D9',
+        dark: '#073B4C'
+    },
+    green: {
+        main: '#1BC196'
+    },
     gray: {
         90: 'rgba(0,0,0,.9)',
         80: 'rgba(0,0,0,.8)',

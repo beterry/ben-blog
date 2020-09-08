@@ -20,7 +20,11 @@ ol li, ul li{
 }
 
 a{
-    color: #5D9DC1;
+    color: #118AB2;
+    text-decoration: none;
+}
+
+a:hover{
     text-decoration: underline;
 }
 
