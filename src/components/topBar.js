@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 import colors from '../styles/colors'
 
 //import icons
-import logo from '../images/logo.svg'
 import mail from '../images/mail.svg'
 import github from '../images/github.svg'
 
@@ -19,7 +18,7 @@ export default class TopBar extends Component {
                     <Left>
                         <Link to='/'>
                             <Logo>
-                                <img src={logo} alt='Dino' />
+                                <div />
                                 <p>Ben Terry</p>
                             </Logo>
                         </Link>
@@ -35,7 +34,7 @@ export default class TopBar extends Component {
 }
 
 const Navigation = styled.nav`
-    background: ${colors.p.dark};
+    background: ${colors.blue.dark};
     a{
         text-decoration: none;
     }
@@ -47,7 +46,7 @@ const Navigation = styled.nav`
 const FlexWrapper =  styled.div`
     min-height: 3.5rem;
     width: 80%;
-    max-width: 768px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -67,15 +66,31 @@ const Right = styled.div`
 
 const Logo = styled.div`
     display: flex;
+    position: relative;
     align-items: center;
+    height: 2rem;
+    padding: 0 .6rem;
     p{
         font-family: 'Raleway', sans-serif;
-        font-weight: 700;
-        color: ${colors.s.main};
+        font-weight: 500;
+        color: white;
         margin: 0;
         font-size: 1.25rem;
+        text-shadow: 0 2px 2px ${colors.gray[20]};
+        z-index: 2;
     }
-    img{
-        margin-right: 1rem;
+    div{
+        height: 2rem;
+        position: absolute;
+        left: 0;
+        right: calc((100% - 2rem));
+        background: linear-gradient(to right, ${colors.blue.main}, ${colors.green.main});
+        border-radius: 1rem;
+        transition: right .2s;
+    }
+    &:hover{
+        div{
+            right: 0;
+        }
     }
 `

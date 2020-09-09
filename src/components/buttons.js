@@ -52,7 +52,7 @@ const IconButton = styled.button`
     color: ${props => props.white ? 'white' : 'black'};
     transition: transform .35s;
     &:hover{
-        background: ${colors.p.main};
+        background: ${colors.blue.main};
     }
     svg{
       flex-shrink: 0;
