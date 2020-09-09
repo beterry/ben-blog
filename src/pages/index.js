@@ -11,14 +11,13 @@ import Section from '../components/section'
 
 //import components
 import Hero from '../components/homeHeader'
-import BlogList from '../components/blogList'
-import BlogPreview from '../components/blogPreview'
+// import BlogList from '../components/blogList'
+// import BlogPreview from '../components/blogPreview'
 import {ContainedButton} from '../components/buttons'
 
 const Homepage = ({ data }) => {
-  const posts = data.blogQuery.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
-  const works = data.workQuery.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
-    console.log(posts, works)
+    const posts = data.blogQuery.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
+    const works = data.workQuery.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
 
   return (
     <Layout>
@@ -29,25 +28,17 @@ const Homepage = ({ data }) => {
             <Rule />
             <Padding />
         <Section heading='Recent work'>
-                {works.map((work) => 
-                    <Link key={work.title} to={work.slug}><li key={work.title}>{work.title}</li></Link>
-                )}
+            {works.map((work) => 
+                <Link key={work.title} to={work.slug}><li key={work.title}>{work.title}</li></Link>
+            )}
         </Section>
             <Padding />
             <Rule />
             <Padding />
         <Section heading='Playground'>
-            <BlogList>
-                {posts.map((post) => 
-                    <BlogPreview
-                        title={post.title}
-                        date={post.date}
-                        icon={post.icon.publicURL}
-                        slug={post.slug}
-                        key={post.title}
-                    />
-                )}
-            </BlogList>
+            {posts.map((post) => 
+                <Link key={post.title} to={post.slug}><li key={post.title}>{post.title}</li></Link>
+            )}
         </Section>
             <Padding />
         <Section heading='My evolution'>

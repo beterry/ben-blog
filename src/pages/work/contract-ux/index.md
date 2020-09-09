@@ -28,8 +28,6 @@ The ability for a customer to view their contracts online was the largest and mo
 
 ### Problems with the existing interface
 
-![Old interface](./old.png)
-
 #### Not mobile friendly
 
 The existing design did not scale to mobile. We wanted our customer’s to have the ability to view their contract information on the go and on any screen.
@@ -49,9 +47,6 @@ The old portal’s design was outdated (it was created in 2010) and included no 
 ### Wireframing
 
 During the wireframing process, I brainstormed low fidelity features, layouts and components which would solve the existing interface’s problems and accomplish the goals we discussed in the stakeholder meeting.
-
-![Wireframe of contract list](./wire-1.jpg)
-![Wireframe of contract details](./wire-2.jpg)
 
 #### Designing for mobile screens
 
@@ -75,16 +70,11 @@ To allow for future feature additions, I wireframed a layout which uses a naviga
 
 My preferred prototyping software is Adobe XD. I used this software to design the prototype.
 
-![XD mockup of contract list](./proto-1.jpg)
-![XD mockup of contract details](./proto-2.jpg)
-
 ### Material Design
 
 Google’s Material Design is a wonderful design system for creating great user interfaces. To build the portal’s interface, I used Material Design’s extensive guides to research component best practices, behavior, and specs.
 
 ### Before and after
-
-![Screenshot of before and after](./before-after.jpg)
 
 ## Developing the prototype
 

@@ -26,8 +26,6 @@ The stakeholder meeting involved the Regional Vice President of Sales, the Vice 
 
 During the wireframing process, I brainstormed low fidelity features that could accomplish and solve all the goals we discussed in the stakeholder meeting.
 
-![Wireframe](/wire.jpg)
-
 #### Allowing for easy calculations
 
 After doing some research, I decided that range sliders would be the best method for allowing users to provide input. These are some of the benefits of using range sliders:
@@ -53,8 +51,6 @@ At the bottom of the page, the call-to-action section not only offers a ‘sign 
 ## Prototyping the design
 
 My preferred prototyping software is Adobe XD. I used this software to design the prototype.
-
-![Prototype](./proto.jpg)
 
 ## Developing for practice
 

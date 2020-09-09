@@ -10,9 +10,27 @@ module.exports = {
     },
     plugins: [
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `blog`,
+                path: `${__dirname}/src/pages/blog`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `work`,
+                path: `${__dirname}/src/pages/work`,
+            },
+        },
+        {
             resolve: `gatsby-plugin-mdx`,
             options: {
                 extensions: [`.md`, `.mdx`],
+                defaultLayouts: {
+                    blog: require.resolve("./src/components/layouts/blog-layout.js"),
+                    default: require.resolve("./src/components/layouts/work-layout.js"),
+                },
                 gatsbyRemarkPlugins: [
                     {
                         resolve: `gatsby-remark-images`,
@@ -31,27 +49,6 @@ module.exports = {
                     `gatsby-remark-copy-linked-files`,
                     `gatsby-remark-smartypants`,
                 ],
-            },
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: `${__dirname}/content/blog`,
-                name: `blog`,
-            },
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: `${__dirname}/content/assets`,
-                name: `assets`,
-            },
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: `${__dirname}/content/work`,
-                name: `work`,
             },
         },
         `gatsby-transformer-sharp`,
