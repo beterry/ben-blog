@@ -6,7 +6,8 @@ import { Link } from "gatsby"
 
 //layout components
 import Layout from "../layout"
-import BlogLayout from '../layouts/blogBody'
+import BlogBody from '../layouts/blog-body'
+import Margins from '../layouts/margins'
 
 //utility components
 import SEO from "../seo"
@@ -29,32 +30,35 @@ export default ({ children, pageContext }) => (
         />
         <article>
             <Padding />
-            <header>
-                <h1>{pageContext.frontmatter.title}</h1>
-                <DisplayDate>{pageContext.frontmatter.date}</DisplayDate>
-            </header>
-            <Padding />
-            <BlogLayout>
-                <section>
-                    <ImportantLinks
-                        links={[
-                            {
-                                title: 'Code on Github',
-                                url: pageContext.frontmatter.code
-                            },
-                            {
-                                title: 'Live prototype',
-                                url: pageContext.frontmatter.deployed
-                            }
-                        ]}
-                    />
-                </section>
-                <section>
-                    <ContentStyleWrapper>
-                        <MDXProvider components={shortcodes}>{children}</MDXProvider>
-                    </ContentStyleWrapper>
-                </section>
-            </BlogLayout>
+            
+            <Margins>
+                <header>
+                    <h1>{pageContext.frontmatter.title}</h1>
+                    <DisplayDate>{pageContext.frontmatter.date}</DisplayDate>
+                </header>
+                <Padding />
+                <BlogBody>
+                    <section>
+                        <ImportantLinks
+                            links={[
+                                {
+                                    title: 'Code on Github',
+                                    url: pageContext.frontmatter.code
+                                },
+                                {
+                                    title: 'Live prototype',
+                                    url: pageContext.frontmatter.deployed
+                                }
+                            ]}
+                        />
+                    </section>
+                    <section>
+                        <ContentStyleWrapper>
+                            <MDXProvider components={shortcodes}>{children}</MDXProvider>
+                        </ContentStyleWrapper>
+                    </section>
+                </BlogBody>
+            </Margins>
             <Padding />
         </article>
         

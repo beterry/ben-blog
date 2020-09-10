@@ -2,7 +2,11 @@
 title: Updating Mail Shark’s Customer Portal
 description: A redesign of Mail Shark's customer portal
 date: "2020-09-01"
+code: "https://github.com/beterry/contract-ux"
+deployed: "https://beterry.github.io/contract-ux/"
 ---
+
+import { graphql } from "gatsby"
 
 ## About Mail Shark’s customer portal
 
@@ -104,3 +108,19 @@ The prototype did not consume an API. It relied on local JSON data for informati
 
 ## Final Thoughts
 Overall, I enjoyed the challenge of thinking through the contract viewing experience and reorganizing the data to improve the interface. In the future, I look forward to expanding this design with new features.
+
+export const pageQuery = graphql`
+  query contractQuery{
+    mainImage: allFile(filter: {relativeDirectory: {eq: "contract-ux/images/main"}}) {
+        edges {
+            node {
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    }
+  }
+`

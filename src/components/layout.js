@@ -11,15 +11,9 @@ const Layout = ({ children }) => {
   return (
     <div>
         <TopBar />
-        <Main>{children}</Main>
+        <main>{children}</main>
     </div>
   )
 }
 
 export default Layout
-
-const Main = styled.main`
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-`

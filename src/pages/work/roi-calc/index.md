@@ -2,7 +2,11 @@
 title: Designing an Automotive Direct Mail ROI Calculator
 description: An online ROI calculator designed for Mail Shark
 date: "2020-08-30"
+code: "https://github.com/beterry/roi-calc"
+deployed: "https://beterry.github.io/roi-calc/"
 ---
+
+import { graphql } from "gatsby"
 
 ## About this project
 
@@ -94,3 +98,19 @@ The final direct mail ROI calculator is an effective sales tool. The experience 
 I’m very satisfied with the final look of this project. The user interface is modern and takes advantage of user interaction (not text) to tell the desired story, direct mail is a great investment.
 
 I enjoyed developing this project with React. Coding the range sliders was a great way to practice state management. Using the components I created for this interface, it would be simple to create ROI calculators in the future for different industries.
+
+export const pageQuery = graphql`
+  query roiQuery{
+    mainImage: allFile(filter: {relativeDirectory: {eq: "roi-calc/images/main"}}) {
+        edges {
+            node {
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    }
+  }
+`
