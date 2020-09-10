@@ -3,6 +3,8 @@ import colors from './colors'
 
 export default styled.div`
 
+    z-index: 1;
+
     h2{
         border-bottom: 1px solid ${colors.gray[10]};
         padding-bottom: .5rem;

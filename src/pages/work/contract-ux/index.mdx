@@ -52,6 +52,13 @@ The old portal’s design was outdated (it was created in 2010) and included no 
 
 During the wireframing process, I brainstormed low fidelity features, layouts and components which would solve the existing interface’s problems and accomplish the goals we discussed in the stakeholder meeting.
 
+<Screens
+    images={[
+        props.data.wire.edges[0].node.childImageSharp.fluid,
+        props.data.wire.edges[1].node.childImageSharp.fluid,
+    ]}
+/>
+
 #### Designing for mobile screens
 
 While wireframing, I made sure to design for mobile screens first. I wanted to ensure all the contract information was readily available and easy to access.
@@ -110,17 +117,28 @@ The prototype did not consume an API. It relied on local JSON data for informati
 Overall, I enjoyed the challenge of thinking through the contract viewing experience and reorganizing the data to improve the interface. In the future, I look forward to expanding this design with new features.
 
 export const pageQuery = graphql`
-  query contractQuery{
-    mainImage: allFile(filter: {relativeDirectory: {eq: "contract-ux/images/main"}}) {
-        edges {
-            node {
-                childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid
+    query contractQuery{
+        mainImage: allFile(filter: {relativeDirectory: {eq: "contract-ux/images/main"}}) {
+            edges {
+                node {
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
+        }
+        wire: allFile(filter: {relativeDirectory: {eq: "contract-ux/images/wire"}}, sort: {order: ASC, fields: name}) {
+            edges {
+                node {
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid
+                        }
                     }
                 }
             }
         }
     }
-  }
 `

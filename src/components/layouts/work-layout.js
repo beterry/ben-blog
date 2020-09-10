@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 
 //layout components
 import Layout from "../layout"
-import BlogLayout from './blog-body'
+import WorkLayout from './work-body'
 import Margins from '../layouts/margins'
 
 //utility components
@@ -16,12 +16,13 @@ import Padding from '../padding'
 //components
 import ImportantLinks from '../importantLinks'
 import WorkHeader from '../work-header'
+import Screens from '../screens'
 
 //import styles
 import colors from '../../styles/colors'
 import ContentStyleWrapper from '../../styles/content-style-wrapper'
 
-const shortcodes = { Link }
+const shortcodes = { Link, Screens }
 
 export default ({ children, pageContext, data }) => {
 
@@ -40,32 +41,41 @@ export default ({ children, pageContext, data }) => {
                     fluid={data.mainImage.edges[0].node.childImageSharp.fluid}
                 />
                 <Padding />
-                <Margins>
-                    <BlogLayout>
-                        <section>
-                            <ImportantLinks
-                                links={[
-                                    {
-                                        title: 'Code on Github',
-                                        url: pageContext.frontmatter.code
-                                    },
-                                    {
-                                        title: 'Live prototype',
-                                        url: pageContext.frontmatter.deployed
-                                    }
-                                ]}
-                            />
-                        </section>
-                        <section>
+                    <Margins>
+                        <WorkLayout>
+                            <LinkWrapper>
+                                <ImportantLinks
+                                    links={[
+                                        {
+                                            title: 'Code on Github',
+                                            url: pageContext.frontmatter.code
+                                        },
+                                        {
+                                            title: 'Live prototype',
+                                            url: pageContext.frontmatter.deployed
+                                        }
+                                    ]}
+                                />
+                            </LinkWrapper>
                             <ContentStyleWrapper>
                                 <MDXProvider components={shortcodes}>{children}</MDXProvider>
                             </ContentStyleWrapper>
-                        </section>
-                    </BlogLayout>
-                </Margins>
+                        </WorkLayout>
+                    </Margins>
                 <Padding />
             </article>
             
         </Layout>
     )   
 }
+
+const LinkWrapper = styled.div`
+    @media screen and (min-width: 1180px){
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 0;
+        left: 51rem;
+        bottom: 0;
+    }
+`
