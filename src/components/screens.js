@@ -5,10 +5,10 @@ import Img from 'gatsby-image'
 //styles
 import colors from '../styles/colors'
 
-export default function Screens({images}) {
+export default function Screens({images, before}) {
     return (
         <Container>
-            <Grid>
+            <Grid before={before}>
                 <ImageContainer>
                     <Img
                         fluid={images[0]}
@@ -30,15 +30,16 @@ export default function Screens({images}) {
 
 const Container = styled.div`
     position: relative;
-    margin-top: 2rem;
+    margin-top: 3rem;
     background: #E4E4E4;
     padding: 5%;
+    border-radius: .5rem;
     z-index: 2;
 `
 
 const Grid = styled.div`
     display: grid;
-    grid-template-columns: 1fr 3.84fr;
+    grid-template-columns: ${props => props.before ? '1fr 1fr' : '1fr 3.84fr'};
     gap: 5%;
 `
 

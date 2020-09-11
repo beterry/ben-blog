@@ -32,6 +32,8 @@ The ability for a customer to view their contracts online was the largest and mo
 
 ### Problems with the existing interface
 
+![Existing interface](./images/before/01_before.jpg)
+
 #### Not mobile friendly
 
 The existing design did not scale to mobile. We wanted our customer’s to have the ability to view their contract information on the go and on any screen.
@@ -59,6 +61,13 @@ During the wireframing process, I brainstormed low fidelity features, layouts an
     ]}
 />
 
+<Screens
+    images={[
+        props.data.wire.edges[2].node.childImageSharp.fluid,
+        props.data.wire.edges[3].node.childImageSharp.fluid,
+    ]}
+/>
+
 #### Designing for mobile screens
 
 While wireframing, I made sure to design for mobile screens first. I wanted to ensure all the contract information was readily available and easy to access.
@@ -81,11 +90,33 @@ To allow for future feature additions, I wireframed a layout which uses a naviga
 
 My preferred prototyping software is Adobe XD. I used this software to design the prototype.
 
+<Screens
+    images={[
+        props.data.proto.edges[0].node.childImageSharp.fluid,
+        props.data.proto.edges[1].node.childImageSharp.fluid,
+    ]}
+/>
+
+<Screens
+    images={[
+        props.data.proto.edges[2].node.childImageSharp.fluid,
+        props.data.proto.edges[3].node.childImageSharp.fluid,
+    ]}
+/>
+
 ### Material Design
 
 Google’s Material Design is a wonderful design system for creating great user interfaces. To build the portal’s interface, I used Material Design’s extensive guides to research component best practices, behavior, and specs.
 
 ### Before and after
+
+<Screens
+    images={[
+        props.data.before.edges[0].node.childImageSharp.fluid,
+        props.data.proto.edges[1].node.childImageSharp.fluid,
+    ]}
+    before
+/>
 
 ## Developing the prototype
 
@@ -130,6 +161,28 @@ export const pageQuery = graphql`
             }
         }
         wire: allFile(filter: {relativeDirectory: {eq: "contract-ux/images/wire"}}, sort: {order: ASC, fields: name}) {
+            edges {
+                node {
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
+        }
+        proto: allFile(filter: {relativeDirectory: {eq: "contract-ux/images/proto"}}, sort: {order: ASC, fields: name}) {
+            edges {
+                node {
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
+        }
+        before: allFile(filter: {relativeDirectory: {eq: "contract-ux/images/before"}}) {
             edges {
                 node {
                     childImageSharp {
