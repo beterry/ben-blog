@@ -5,32 +5,35 @@ import Img from 'gatsby-image'
 //styles
 import colors from '../styles/colors'
 
-export default function Screens({images, before}) {
+export default function Screens({images, before, caption}) {
     return (
-        <Container>
-            <Grid before={before}>
-                <ImageContainer>
-                    <Img
-                        fluid={images[0]}
-                        alt='screenshot' 
-                        style={{boxShadow: '0 0 2px rgba(0,0,0,.2)'}}
-                    />
-                </ImageContainer>
-                <ImageContainer>
-                    <Img
-                        fluid={images[1]}
-                        alt='screenshot'
-                        style={{boxShadow: '0 0 2px rgba(0,0,0,.2)'}}
-                    />
-                </ImageContainer>
-            </Grid>
-        </Container>
+        <>
+            <Container>
+                <Grid before={before}>
+                    <ImageContainer>
+                        <Img
+                            fluid={images[0]}
+                            alt='screenshot' 
+                            style={{boxShadow: '0 0 2px rgba(0,0,0,.2)'}}
+                        />
+                    </ImageContainer>
+                    <ImageContainer>
+                        <Img
+                            fluid={images[1]}
+                            alt='screenshot'
+                            style={{boxShadow: '0 0 2px rgba(0,0,0,.2)'}}
+                        />
+                    </ImageContainer>
+                </Grid>
+            </Container>
+            {caption ? <p class='caption'>{caption}</p> : null}
+        </>
     )
 }
 
 const Container = styled.div`
     position: relative;
-    margin-top: 3rem;
+    margin: 2.25rem 0;
     background: #E4E4E4;
     padding: 5%;
     border-radius: .5rem;

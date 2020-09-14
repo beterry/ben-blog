@@ -49,4 +49,11 @@ export default styled.div`
         border-left: 1px solid rgba(0,0,0,.1);
         color: rgba(0,0,0,.6);
     }
+
+    .caption{
+        font-size: .75rem;
+        color: ${colors.gray[50]};
+        margin-top: -1.5rem;
+        line-height: 1.15;
+    }
 `
