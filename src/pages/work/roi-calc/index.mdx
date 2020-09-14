@@ -30,6 +30,13 @@ The stakeholder meeting involved the Regional Vice President of Sales, the Vice 
 
 During the wireframing process, I brainstormed low fidelity features that could accomplish and solve all the goals we discussed in the stakeholder meeting.
 
+<Screens
+    images={[
+        props.data.wire.edges[0].node.childImageSharp.fluid,
+        props.data.wire.edges[1].node.childImageSharp.fluid,
+    ]}
+/>
+
 #### Allowing for easy calculations
 
 After doing some research, I decided that range sliders would be the best method for allowing users to provide input. These are some of the benefits of using range sliders:
@@ -55,6 +62,13 @@ At the bottom of the page, the call-to-action section not only offers a ‘sign 
 ## Prototyping the design
 
 My preferred prototyping software is Adobe XD. I used this software to design the prototype.
+
+<Screens
+    images={[
+        props.data.proto.edges[0].node.childImageSharp.fluid,
+        props.data.proto.edges[1].node.childImageSharp.fluid,
+    ]}
+/>
 
 ## Developing for practice
 
@@ -100,17 +114,50 @@ I’m very satisfied with the final look of this project. The user interface is 
 I enjoyed developing this project with React. Coding the range sliders was a great way to practice state management. Using the components I created for this interface, it would be simple to create ROI calculators in the future for different industries.
 
 export const pageQuery = graphql`
-  query roiQuery{
-    mainImage: allFile(filter: {relativeDirectory: {eq: "roi-calc/images/main"}}) {
-        edges {
-            node {
-                childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid
+    query roiQuery{
+        mainImage: allFile(filter: {relativeDirectory: {eq: "roi-calc/images/main"}}) {
+            edges {
+                node {
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
+        }
+        wire: allFile(filter: {relativeDirectory: {eq: "roi-calc/images/wire"}}, sort: {order: ASC, fields: name}) {
+            edges {
+                node {
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
+        }
+        proto: allFile(filter: {relativeDirectory: {eq: "roi-calc/images/proto"}}, sort: {order: ASC, fields: name}) {
+            edges {
+                node {
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
+        }
+        before: allFile(filter: {relativeDirectory: {eq: "roi-calc/images/before"}}) {
+            edges {
+                node {
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid
+                        }
                     }
                 }
             }
         }
     }
-  }
 `
