@@ -10,7 +10,7 @@ import Rule from '../components/rule'
 import Section from '../components/section'
 
 //import components
-import Hero from '../components/homeHeader'
+import Hero from '../components/home-header'
 // import BlogList from '../components/blogList'
 // import BlogPreview from '../components/blogPreview'
 import {ContainedButton} from '../components/buttons'
@@ -18,12 +18,14 @@ import {ContainedButton} from '../components/buttons'
 const Homepage = ({ data }) => {
     const posts = data.blogQuery.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
     const works = data.workQuery.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
+    const ben = data.ben.fluid
+
+    console.log(data)
 
   return (
     <Layout>
         <SEO title="Portfolio" />
-            <Padding />
-        <Hero />
+        <Hero ben={ben}/>
             <Padding />
             <Rule />
             <Padding />
@@ -93,6 +95,11 @@ export const pageQuery = graphql`
                         slug
                     }
                 }
+            }
+        }
+        ben: imageSharp(fluid: {originalName: {eq: "ben.png"}}) {
+            fluid {
+                ...GatsbyImageSharpFluid
             }
         }
     }

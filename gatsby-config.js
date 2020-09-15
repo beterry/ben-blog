@@ -24,6 +24,13 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `work`,
+                path: `${__dirname}/src/images`,
+            },
+        },
+        {
             resolve: `gatsby-plugin-mdx`,
             options: {
                 extensions: [`.md`, `.mdx`],
