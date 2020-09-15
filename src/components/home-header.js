@@ -96,6 +96,7 @@ const Highlight = styled.div`
     h2{
         margin: 0;
         z-index: 2;
+        text-shadow: 0 2px 2px ${colors.gray[20]};
     }
 `
 
