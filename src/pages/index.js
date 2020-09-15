@@ -14,8 +14,7 @@ import Margins from '../components/layouts/margins'
 //import components
 import Hero from '../components/home-header'
 import WorkGallery from '../components/work-gallery'
-// import BlogList from '../components/blogList'
-// import BlogPreview from '../components/blogPreview'
+import BlogList from '../components/blog-list'
 import {ContainedButton} from '../components/buttons'
 
 const Homepage = ({ data }) => {
@@ -36,23 +35,18 @@ const Homepage = ({ data }) => {
                     <WorkGallery works={works} />
                 </Section>
                 <Section heading='My blog'>
-                    {posts.map((post) => 
-                        <Link key={post.title} to={post.slug}><li key={post.title}>{post.title}</li></Link>
-                    )}
+                    <BlogList posts={posts} />
                 </Section>
             </WorkBlogLayout>
             <Padding />
-            <Section heading='My evolution'>
+            <Section heading='About me'>
                 <p>My career, after university, began as a Graphic Designer. At both Lasting Image and Sign Medix, I was the only creative professional on staff and was responsible for designing marketing materials, creating and maintaining brand guidelines, communicating with clients, updating website content, and much more.</p>
                 <p>In 2017, I began experimenting with web technologies. I created my first personal website with vanilla HTML and CSS and realized front-end development was the perfect combination of my interest in design and technology. Soon after this realization, I enrolled in several online curriculums to foster my desire to become a front-end developer.</p>
                 <p>In 2018, I began working at Mail Shark. Working with the Creative Director, I introduced the marketing team to Adobe XD, which allowed for a more efficient approach to designing and prototyping digital content. I created a design system that established a cohesive look for their web pages, and developed a step-by-step, goal-oriented process for completing projects. In 2019, I was promoted to User Interface and Experience Designer. Although, as UI/UX Designer, I was not responsible for developing the interfaces I created at Mail Shark, I coded my projects independently as practice.</p>
                 <p>Currently, I’m working hard to learn and perfect my coding abilities to earn my first position as a front-end developer.</p>
                 <ResumeButton primary>My Resume</ResumeButton>
             </Section>
-                <Padding />
-            <Section heading='Timeline'>
-                timeline here    
-            </Section>
+            <Padding />
         </Margins>
         <Padding />    
     </Layout>
@@ -94,9 +88,7 @@ export const pageQuery = graphql`
                     frontmatter {
                         date(formatString: "MMMM DD, YYYY")
                         title
-                        icon {
-                            publicURL
-                        }
+                        type
                     }
                     fields {
                         slug
@@ -119,8 +111,8 @@ const ResumeButton = styled(ContainedButton)`
 const WorkBlogLayout = styled.div`
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 3rem;
     @media screen and (min-width: 73.75rem){
-        grid-template-columns: 48fr 25fr;       
+        grid-template-columns: 48fr 24fr;       
     }
 `
