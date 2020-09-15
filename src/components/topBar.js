@@ -4,6 +4,9 @@ import { Link } from "gatsby"
 
 import colors from '../styles/colors'
 
+//layout components
+import Margins from './layouts/margins'
+
 //import icons
 import mail from '../images/mail.svg'
 import github from '../images/github.svg'
@@ -14,20 +17,22 @@ export default class TopBar extends Component {
     render() {
         return (
             <Navigation>
-                <FlexWrapper>
-                    <Left>
-                        <Link to='/'>
-                            <Logo>
-                                <div />
-                                <p>Ben Terry</p>
-                            </Logo>
-                        </Link>
-                    </Left>
-                    <Right>
-                        <IconButton as='a' href='mailto:benterry.design@gmail.com'><img src={mail} alt='Email' /></IconButton>
-                        <IconButton as='a' href='https://github.com/beterry' target='_blank'><img src={github} alt='Github' /></IconButton>
-                    </Right>
-                </FlexWrapper>
+                <Margins>
+                    <FlexWrapper>
+                        <Left>
+                            <Link to='/'>
+                                <Logo>
+                                    <div />
+                                    <p>Ben Terry</p>
+                                </Logo>
+                            </Link>
+                        </Left>
+                        <Right>
+                            <IconButton as='a' href='mailto:benterry.design@gmail.com'><img src={mail} alt='Email' /></IconButton>
+                            <IconButton as='a' href='https://github.com/beterry' target='_blank'><img src={github} alt='Github' /></IconButton>
+                        </Right>
+                    </FlexWrapper>
+                </Margins>
             </Navigation>
         )
     }
@@ -45,9 +50,6 @@ const Navigation = styled.nav`
 
 const FlexWrapper =  styled.div`
     min-height: 3.5rem;
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;

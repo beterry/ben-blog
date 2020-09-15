@@ -113,9 +113,10 @@ const ResumeButton = styled(ContainedButton)`
 const WorkBlogLayout = styled.div`
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 4rem;
     @media screen and (min-width: 73.75rem){
-        grid-template-columns: 48fr 24fr;       
+        grid-template-columns: 48fr 24fr;   
+        gap: 3rem;    
     }
 `
 

@@ -48,6 +48,11 @@ const Grid = styled.ul`
         color: inherit;
         text-decoration: none;
     }
+
+    @media screen and (max-width: 37.5rem){
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
 `
 
 const GridItem = styled.li`

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Img from 'gatsby-image'
 
 //styles
@@ -54,6 +54,9 @@ const Left = styled.div`
     h1{
         margin: 0;
     }
+    p{
+        margin-top: 2rem;
+    }
     hgroup{
         display: flex;
         flex-direction: column;
@@ -76,27 +79,41 @@ const Right = styled.div`
     }
 `
 
+const extend = keyframes`
+  from {
+    right: calc((100% - 4rem));
+  }
+  to {
+    right: 0;
+  }
+`;
+
 const Highlight = styled.div`
     order: 1;
-    display: inline-flex;
+    display: flex;
     position: relative;
     align-items: center;
-    height: 4rem;
+    min-height: 4rem;
     padding: 0 1.5rem;
     margin-bottom: 1rem;
     div{
         height: 4rem;
         position: absolute;
         left: 0;
-        right: 0;
+        right: calc((100% - 4rem));
         background: linear-gradient(to right, ${colors.blue.main}, ${colors.green.main});
         border-radius: 2rem;
-        transition: right .2s;
+        animation: ${extend} 1s linear 1;
+        animation-fill-mode: forwards;
+        /* animation-delay: .5s; */
     }
     h2{
         margin: 0;
         z-index: 2;
         text-shadow: 0 2px 2px ${colors.gray[20]};
+        @media screen and (max-width: 37.5rem){
+            font-size: 1.5rem;
+        }
     }
 `
 
@@ -104,3 +121,5 @@ const ImageContainer = styled.div`
     margin: 0 auto;
     max-width: 30rem;
 `
+
+
