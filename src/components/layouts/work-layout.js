@@ -70,7 +70,7 @@ export default ({ children, pageContext, data }) => {
 }
 
 const LinkWrapper = styled.div`
-    @media screen and (min-width: 1180px){
+    @media screen and (min-width: 73.75rem){
         position: absolute;
         z-index: 0;
         top: 0;
