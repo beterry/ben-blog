@@ -14,7 +14,6 @@ import SEO from "../seo"
 import Padding from '../padding'
 
 //components
-import ImportantLinks from '../importantLinks'
 import WorkHeader from '../work-header'
 import Screens from '../screens'
 
@@ -23,6 +22,24 @@ import colors from '../../styles/colors'
 import ContentStyleWrapper from '../../styles/content-style-wrapper'
 
 const shortcodes = { Link, Screens }
+
+const InfoSection = ({title, children}) => (
+    <InfoContainer>
+        <h4>{title}</h4>
+        {children}
+    </InfoContainer>
+)
+
+const Info = ({title, children}) => (
+    <InfoWrapper>
+        <h5>{title}</h5>
+        <p>{children}</p>
+    </InfoWrapper>
+)
+
+const LinkOut = ({url, children}) => (
+    <a href={url} target='_blank' rel='noreferrer noopener'>{children}</a>
+)
 
 export default ({ children, pageContext, data }) => {
 
@@ -37,26 +54,23 @@ export default ({ children, pageContext, data }) => {
             <article>
                 <WorkHeader
                     title={pageContext.frontmatter.title}
-                    date={pageContext.frontmatter.date}
+                    description={pageContext.frontmatter.description}
                     fluid={data.mainImage.edges[0].node.childImageSharp.fluid}
                 />
                 <Padding />
                     <Margins>
                         <WorkLayout>
-                            <LinkWrapper>
-                                <ImportantLinks
-                                    links={[
-                                        {
-                                            title: 'Code on Github',
-                                            url: pageContext.frontmatter.code
-                                        },
-                                        {
-                                            title: 'Live prototype',
-                                            url: pageContext.frontmatter.deployed
-                                        }
-                                    ]}
-                                />
-                            </LinkWrapper>
+                            <ArticleInfo>
+                                <InfoSection title='About'>
+                                    <Info title='Company'>Mail Shark</Info>
+                                    <Info title='Position'>UI / UX Designer I</Info>
+                                    <Info title='Started'>{pageContext.frontmatter.date}</Info>
+                                </InfoSection>
+                                <InfoSection title='Links'>
+                                    <LinkOut url={pageContext.frontmatter.code}>Code on Github</LinkOut>
+                                    <LinkOut url={pageContext.frontmatter.deployed}>Finished Prototype</LinkOut>
+                                </InfoSection>
+                            </ArticleInfo>
                             <ContentStyleWrapper>
                                 <MDXProvider components={shortcodes}>{children}</MDXProvider>
                             </ContentStyleWrapper>
@@ -69,13 +83,56 @@ export default ({ children, pageContext, data }) => {
     )   
 }
 
-const LinkWrapper = styled.div`
+const ArticleInfo = styled.div`
+    margin-bottom: 4rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    @media screen and (min-width: 37.5rem){
+        grid-template-columns: 1fr 1fr;
+    }
     @media screen and (min-width: 73.75rem){
         position: absolute;
         z-index: 0;
         top: 0;
         right: 0;
         left: 51rem;
-        bottom: 0;
+        grid-template-columns: 1fr;
+    }
+`
+
+const InfoContainer = styled.div`
+    background: ${colors.green.opacity[10]};
+    padding: 1rem;
+    border-radius: .25rem;
+    h4{
+        margin: 0 0 .5rem 0;
+        padding-left: 1rem;
+        border-bottom: 1px solid ${colors.gray[10]};
+        padding-bottom: .5rem;
+    }
+    a{
+        display: block;
+        padding: 1rem;
+        border-radius: .25rem;
+        color: ${colors.green.main};
+        text-decoration: none;
+    }
+    a:hover{
+        background: ${colors.green.opacity[20]};
+        color: black;
+    }
+`
+
+const InfoWrapper = styled.div`
+    padding: 1rem;
+    h5{
+        font-size: .75rem;
+        text-transform: uppercase;
+        color: ${colors.green.main};
+        letter-spacing: 2px;
+    }
+    p{
+        margin: 0;
     }
 `

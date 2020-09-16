@@ -9,7 +9,7 @@ import colors from '../styles/colors'
  import Padding from '../components/padding'
  import Margins from '../components/layouts/margins'
 
-export default function WorkHeader({title, date, fluid}) {
+export default function WorkHeader({title, description, fluid}) {
     return (
         <Header>
             <Padding />
@@ -23,7 +23,7 @@ export default function WorkHeader({title, date, fluid}) {
                     <Padding />
                     <Left>
                         <Title>{title}</Title>
-                        <Date>{date}</Date>
+                        <Description>{description}</Description>
                     </Left>
                 </Flex>
             </Margins>
@@ -69,11 +69,10 @@ const Title = styled.h1`
     color: white;
 `
 
-const Date = styled.p`
-    color: ${colors.green.main};
-    font-family: 'Raleway', sans-serif;
-    font-weight: 600;
+const Description = styled.p`
+    color: white;
     font-size: 1.25rem;
+    line-height: 1.5;
 `
 
 const ImageWrapper = styled.div`
