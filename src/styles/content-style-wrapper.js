@@ -31,15 +31,6 @@ export default styled.div`
         margin: 2.25rem 0;
     }
 
-    a{
-        color: #118AB2;
-        text-decoration: none;
-    }
-
-    a:hover{
-        text-decoration: underline;
-    }
-
     blockquote{
         margin-block-start: 2rem;
         margin-block-end: 2rem;

@@ -17,7 +17,7 @@ const Button = styled.button`
     font-weight: 600;
     cursor: pointer;
     background: none;
-    
+    text-decoration: none;
 `
 
 const ContainedButton = styled(Button)`
@@ -25,7 +25,6 @@ const ContainedButton = styled(Button)`
     color: white;
     border-radius: 1.5rem;
     text-shadow: 0 2px 2px ${colors.gray[20]};
-    transition: background .5s;
     &:hover{
         background: linear-gradient(to right, ${colors.blue.main}, ${colors.blue.main});
     }

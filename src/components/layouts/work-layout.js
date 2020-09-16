@@ -16,12 +16,11 @@ import Padding from '../padding'
 //components
 import WorkHeader from '../work-header'
 import Screens from '../screens'
+import {ContainedButton} from '../buttons'
 
 //import styles
 import colors from '../../styles/colors'
 import ContentStyleWrapper from '../../styles/content-style-wrapper'
-
-const shortcodes = { Link, Screens }
 
 const InfoSection = ({title, children}) => (
     <InfoContainer>
@@ -37,9 +36,15 @@ const Info = ({title, children}) => (
     </InfoWrapper>
 )
 
-const LinkOut = ({url, children}) => (
-    <a href={url} target='_blank' rel='noreferrer noopener'>{children}</a>
+const LinkOutBase = ({url, className, children}) => (
+    <a href={url} target='_blank' rel='noreferrer noopener' className={className}>{children}</a>
 )
+
+const LinkOutButton = ({url, children}) => (
+    <InlineContainedButton as='a' href={url} target='_blank' rel='noreferrer noopener'>{children}</InlineContainedButton>
+)
+
+const shortcodes = { Link, Screens, LinkOutBase, LinkOutButton }
 
 export default ({ children, pageContext, data }) => {
 
@@ -67,8 +72,8 @@ export default ({ children, pageContext, data }) => {
                                     <Info title='Started'>{pageContext.frontmatter.date}</Info>
                                 </InfoSection>
                                 <InfoSection title='Links'>
-                                    <LinkOut url={pageContext.frontmatter.code}>Code on Github</LinkOut>
-                                    <LinkOut url={pageContext.frontmatter.deployed}>Finished Prototype</LinkOut>
+                                    <LinkSide url={pageContext.frontmatter.code}>Code on Github</LinkSide>
+                                    <LinkSide url={pageContext.frontmatter.deployed}>Finished Prototype</LinkSide>
                                 </InfoSection>
                             </ArticleInfo>
                             <ContentStyleWrapper>
@@ -111,14 +116,15 @@ const InfoContainer = styled.div`
         border-bottom: 1px solid ${colors.gray[10]};
         padding-bottom: .5rem;
     }
-    a{
-        display: block;
-        padding: 1rem;
-        border-radius: .25rem;
-        color: ${colors.green.main};
-        text-decoration: none;
-    }
-    a:hover{
+`
+
+const LinkSide = styled(LinkOutBase)`
+    display: block;
+    padding: 1rem;
+    border-radius: .25rem;
+    color: ${colors.green.main};
+    text-decoration: none;
+    &:hover{
         background: ${colors.green.opacity[20]};
         color: black;
     }
@@ -135,4 +141,9 @@ const InfoWrapper = styled.div`
     p{
         margin: 0;
     }
+`
+
+const InlineContainedButton = styled(ContainedButton)`
+    margin-top: 1rem;
+    display: inline-flex;
 `
