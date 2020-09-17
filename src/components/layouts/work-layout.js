@@ -144,6 +144,6 @@ const InfoWrapper = styled.div`
 `
 
 const InlineContainedButton = styled(ContainedButton)`
-    margin-top: 1rem;
+    margin: 1rem 1rem 0 0;
     display: inline-flex;
 `
