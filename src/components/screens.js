@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 
 //styles
-import colors from '../styles/colors'
+// import colors from '../styles/colors'
 
 export default function Screens({images, before, caption}) {
     return (

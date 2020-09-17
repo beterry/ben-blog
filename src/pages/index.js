@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
@@ -7,7 +7,6 @@ import SEO from "../components/seo"
 
 //layout components
 import Padding from '../components/padding'
-import Rule from '../components/rule'
 import Section from '../components/section'
 import Margins from '../components/layouts/margins'
 
