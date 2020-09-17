@@ -14,12 +14,12 @@ import Padding from '../padding'
 
 //components
 import {ArticleInfo, InfoSection, Info} from '../article-info'
-import {LinkOutButton, LinkSide} from '../links'
+import {LinkOutButton, LinkSide, LinkOut} from '../links'
 
 //import styles
 import ContentStyleWrapper from '../../styles/content-style-wrapper'
 
-const shortcodes = { Link, LinkOutButton }
+const shortcodes = { Link, LinkOutButton, LinkOut }
 
 export default ({ children, pageContext }) => (
     <Layout>

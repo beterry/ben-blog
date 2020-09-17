@@ -29,4 +29,12 @@ const InlineContainedButton = styled(ContainedButton)`
     display: inline-flex;
 `
 
-export {LinkOutButton, LinkSide}
+const LinkOut = styled(LinkOutBase)`
+    color: ${colors.green.main};
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+    }
+`
+
+export {LinkOutButton, LinkSide, LinkOut}
