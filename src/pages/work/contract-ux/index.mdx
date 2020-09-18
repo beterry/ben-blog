@@ -1,6 +1,6 @@
 ---
 title: Updating Mail Shark’s Customer Portal
-description: A redesign of Mail Shark's customer portal
+description: A detailed look at how I planned, designed, and prototyped a new interface for customers to view their Mail Shark contracts.
 date: 2020-09-01
 code: https://github.com/beterry/contract-ux
 deployed: https://beterry.github.io/contract-ux/
@@ -13,7 +13,7 @@ import { graphql } from "gatsby"
 
 Mail Shark is an industry-leading direct mail and print company located in Mohnton, Pennsylvania. They offer many different services including unique, pay-weekly mailing programs and commercial printing. After enrolling in a program at Mail Shark, a customer gets access to an online portal where they can view contract details, upload files, and much more.
 
-For Mail Shark’s marketing department, in 2020, redesigning the customer portal was a priority. As UI/UX Designer, I was responsible for the planning, designing, and developing the prototype for the new and improved customer experience. 
+In 2020, redesigning the customer portal was a priority for Mail Shark's marketing department. As UI/UX Designer, I was responsible for the planning, designing, and developing the prototype for the improved customer experience. 
 
 ## Planning
 
@@ -23,7 +23,7 @@ The purpose of the stakeholder meeting, which involved the President of Mail Sha
 
 #### Minimum viable product
 
-The ability for a customer to view their contracts online was the largest and most important feature of the portal. It was decided that this feature would be the minimum viable product for the new design. We would redesign, develop, and launch the new contract viewing experience first and add new features, also redesigned, at a later date.
+The ability for a customer to view their contracts online is the largest and most important feature of the portal. It was decided that this feature would be the minimum viable product for the new design. The plan was to redesign, develop, and launch the new contract viewing experience initially and add new redesigned features at a later date.
 
 #### Goals
 
@@ -34,6 +34,7 @@ The ability for a customer to view their contracts online was the largest and mo
 ### Problems with the existing interface
 
 ![Existing interface](./images/before/01_before.jpg)
+<p class='caption'>A screenshot of the existing customer portal interface.</p>
 
 #### Not mobile friendly
 
@@ -49,7 +50,7 @@ The contract viewing experience, previously, was very poorly organized.
 
 #### Branding
 
-The old portal’s design was outdated (it was created in 2010) and included no current branding from the website. The online portal and Mail Shark’s website looked completely different which was confusing for users. 
+The old portal’s design was outdated (it was created in 2010) and included no current branding from the website. The online portal and Mail Shark’s website looked completely disconnected.
 
 ### Wireframing
 
@@ -61,6 +62,7 @@ During the wireframing process, I brainstormed low fidelity features, layouts an
         props.data.wire.edges[1].node.childImageSharp.fluid,
     ]}
 />
+<p class='caption'>Wireframe of the contract list</p>
 
 <Screens
     images={[
@@ -68,6 +70,7 @@ During the wireframing process, I brainstormed low fidelity features, layouts an
         props.data.wire.edges[3].node.childImageSharp.fluid,
     ]}
 />
+<p class='caption'>Wireframe of the contract details</p>
 
 #### Designing for mobile screens
 
@@ -77,10 +80,10 @@ I planned to display the contracts as a list on small screens and expand the inf
 
 #### Improving the contract list
 
-I planned to add these new features to the interface to make the contract list easier to read and navigate:
+The wireframes above show several new features which make the contract list easier to read and navigate:
 
 1. By default, the list is sorted with most recent contracts at the top.
-2. By default, completed contracts are hidden. This allows the users to more easily view the contracts that are currently ongoing or pending approval. A “show completed” button would be under the initially shown contracts.
+2. By default, completed contracts are hidden. This allows the users to more easily view the contracts that are currently ongoing or pending approval. A *show completed* button would be under the initially shown contracts.
 3. On mobile screens, users sort the list with a dropdown selection at the top. When viewing the table, the user sorts by clicking the column heading.
 4. Contract details (quantity, starting date, business) are separated into rows and columns.
 
@@ -97,6 +100,7 @@ My preferred prototyping software is Adobe XD. I used this software to design th
         props.data.proto.edges[1].node.childImageSharp.fluid,
     ]}
 />
+<p class='caption'>The finished design of the contract list.</p>
 
 <Screens
     images={[
@@ -104,6 +108,7 @@ My preferred prototyping software is Adobe XD. I used this software to design th
         props.data.proto.edges[3].node.childImageSharp.fluid,
     ]}
 />
+<p class='caption'>A new contract details interface.</p>
 
 ### Material Design
 
@@ -118,6 +123,7 @@ Google’s Material Design is a wonderful design system for creating great user 
     ]}
     before
 />
+<p class='caption'>The out-dated, existing interface (left) was redesigned into a modern dashboard experience (right).</p>
 
 ## Developing the prototype
 
@@ -141,9 +147,169 @@ Although XD has powerful prototyping features, I developed a functional prototyp
 
 The prototype did not consume an API. It relied on local JSON data for information to display.
 
+```js
+// STATUS CODES
+// 0 - actions required
+// 1 - active
+// 2 - completed
+
+export default {
+    1001: {
+        id: 1001,
+        name: "Print Box Toppers",
+        status: 0,
+        business: "Scranton #120",
+        quantity: 10000,
+        starting: new Date(2020, 6, 13),
+        ending: new Date(2020, 8, 15),
+        campaigns: [
+            {
+                product: 'Box Toppers',
+                start: new Date(2020, 6, 13),
+            }
+        ],
+        invoices: []
+    },
+    ...
+}
+```
+
 #### Sorting contracts
 
-#### Application state
+I used this utility function to sort the contract list depending on the application's state.
+
+```js
+//returns new, sorted array
+export default function(sortBy, contracts) {
+    let sortedContracts = contracts
+
+    switch(sortBy){
+        case 'dateAsc':
+            sortedContracts.sort((a, b) => a.starting - b.starting)
+            break
+        case 'nameDesc':
+            sortedContracts.sort((a, b) => {
+                var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+                var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+                if (nameA < nameB) {
+                    return -1;
+                }
+                if (nameA > nameB) {
+                    return 1;
+                }
+                // names must be equal
+                return 0;
+            })
+            break
+        case 'nameAsc':
+            sortedContracts.sort((a, b) => {
+                var nameA = a.name.toUpperCase(); 
+                var nameB = b.name.toUpperCase(); 
+                if (nameA < nameB) {
+                    return 1;
+                }
+                if (nameA > nameB) {
+                    return -1;
+                }
+                return 0;
+            })
+            break
+        case 'quantityDesc':
+            sortedContracts.sort((a, b) => b.quantity - a.quantity)
+            break
+        case 'quantityAsc':
+            sortedContracts.sort((a, b) => a.quantity - b.quantity)
+            break
+        case 'busDesc':
+            sortedContracts.sort((a, b) => {
+                var businessA = a.business.toUpperCase();
+                var businessB = b.business.toUpperCase();
+                if (businessA < businessB) {
+                    return -1;
+                }
+                if (businessA > businessB) {
+                    return 1;
+                }
+                return 0;
+            })
+            break
+        case 'busAsc':
+            sortedContracts.sort((a, b) => {
+                var businessA = a.business.toUpperCase();
+                var businessB = b.business.toUpperCase();
+                if (businessA < businessB) {
+                    return 1;
+                }
+                if (businessA > businessB) {
+                    return -1;
+                }
+                return 0;
+            })
+            break
+        //dateDesc
+        default:
+            sortedContracts.sort((a, b) => b.starting - a.starting)
+            break
+    }
+    return sortedContracts
+}
+```
+
+#### Application render function
+
+```js
+render(){
+    let sortedContracts = this.state.allContracts
+    
+    //filter out completed
+    if (!this.state.showCompleted) {
+        sortedContracts = sortedContracts.filter((contract) => contract.status !== 2)
+    }
+
+    //function to sort array based on state
+    //found in utility folder
+    sortedContracts = sortContracts(this.state.sort, sortedContracts)
+
+    //calculate # of completed contracts to pass to list
+    let numberCompleted = 0
+    this.state.allContracts.forEach((contract) => {
+      if(contract.status === 2){
+        numberCompleted++
+      }
+    })
+
+    return (
+      <Router>
+        <Layout>
+          <Switch>
+            {/* render Details section*/}
+            <Route path="/contracts/:contractId">
+              <Details contracts={data}/>
+            </Route>
+            {/* render ContractList section*/}
+            <Route path="/contracts">
+              <ContractList
+                sortedContracts={sortedContracts}
+                changeSort={this.changeSort}
+                toggleCompleted={this.toggleCompleted}
+                sort={this.state.sort}
+                showCompleted={this.state.showCompleted}
+                numberCompleted={numberCompleted}
+              />
+            </Route>
+            {/* render Message section for everything else*/}
+            <Route exact path="*">
+              <Message />
+            </Route>
+          </Switch>
+        </Layout>
+      </Router>
+    )
+  }
+}
+
+}
+```
 
 ## Final Thoughts
 Overall, I enjoyed the challenge of thinking through the contract viewing experience and reorganizing the data to improve the interface. In the future, I look forward to expanding this design with new features.
