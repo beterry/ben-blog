@@ -1,6 +1,6 @@
 ---
 title: Designing an Automotive Direct Mail ROI Calculator
-description: An online ROI calculator designed for Mail Shark
+description: How I planned, designed, and prototyped a sales tool to help customer's discover the hidden benefits of direct mail.
 date: 2020-08-30
 code: https://github.com/beterry/roi-calc
 deployed: https://beterry.github.io/roi-calc/
@@ -11,7 +11,7 @@ import { graphql } from "gatsby"
 
 ## About this project
 
-Mail Shark is an industry leading direct mail and marketing company. The sales team at Mail Shark often uses return on investment calculations to explain why direct mail is a great marketing tool. This calculation not only takes into account the customer’s average sale and mailing quantity, but also an earned customer’s retention rate and referrals. This extra calculation is effective at convincing customers to enroll in a mailing campaign.
+Mail Shark is an industry leading direct mail and marketing company. The sales team at Mail Shark often uses return on investment calculations to explain why direct mail is a great marketing tool. This calculation not only takes into account the customer’s average sale and mailing quantity, but also retention rates and referrals. This extra calculation is effective at convincing customers to enroll in a mailing campaign.
 
 Previously, this ROI calculation was done behind the scenes with a private spreadsheet, providing very little transparency to customers. In an effort to make this sales tool more accessible, I was tasked to create an online version of the ROI calculator targeted towards automotive shop owners.
 
@@ -24,7 +24,7 @@ The stakeholder meeting involved the Regional Vice President of Sales, the Vice 
 #### Goals
 
 1. Allow the user to effortlessly calculate their potential direct mail ROI
-2. Educate the user about the unseen long-term benefits of direct mail
+2. Educate the user about the unseen, substantial long-term benefits of direct mail
 3. Collect the user’s contact information for follow-up calls
 
 ### Wireframing
@@ -37,6 +37,7 @@ During the wireframing process, I brainstormed low fidelity features that could 
         props.data.wire.edges[1].node.childImageSharp.fluid,
     ]}
 />
+<p class="caption">The approved wireframe layout for the calculator.</p>
 
 #### Allowing for easy calculations
 
@@ -58,9 +59,9 @@ It was important to separate the calculations into different sections so the use
 
 #### Collecting users info
 
-At the bottom of the page, the call-to-action section not only offers a ‘sign up’ button, but also an ‘email me results’ button. By choosing the ‘Email Me Results’ button, the user would fill in their email address and be mailed their unique ROI calculation in a spreadsheet. This option requires less commitment than signing up on the spot and would entice users to provide their email address for future follow-ups.
+At the bottom of the page, the call-to-action section not only offers a *sign up* button, but also an ‘email me results’ button. By choosing the *Email Me Results* button, the user would fill in their email address and be mailed their unique ROI calculation in a spreadsheet. This option requires less commitment than signing up on the spot and would entice users to provide their email address for future follow-ups.
 
-## Prototyping the design
+## Designing the calculator
 
 My preferred prototyping software is Adobe XD. I used this software to design the prototype.
 
@@ -70,14 +71,15 @@ My preferred prototyping software is Adobe XD. I used this software to design th
         props.data.proto.edges[1].node.childImageSharp.fluid,
     ]}
 />
+<p class="caption">The finished calculator design.</p>
 
-## Developing for practice
+## Developing a prototype
 
-After the prototype was approved for development, I worked with Mail Shark’s front-end developer to supply assets and aid development. 
+After the design was approved, I worked to develop a prototype so my management team could have a better understanding of how the experience would function. Although Adobe XD has powerful prototyping features, I wanted to develop the prototype with web technology as coding practice.
 
-Although, as UI/UX Designer, I was not responsible for developing this project, I coded the calculator independently as practice.
+I then worked with Mail Shark’s front-end developer to supply assets and aid development of the deployable product. 
 
-<LinkOutButton url="https://beterry.github.io/roi-calc/">View the Prototype</LinkOutButton>
+<LinkOutButton url="https://beterry.github.io/roi-calc/">View my Prototype</LinkOutButton>
 <LinkOutButton url="https://github.com/beterry/roi-calc">View Github Repo</LinkOutButton>
 
 ### Technology used
@@ -90,7 +92,7 @@ Although, as UI/UX Designer, I was not responsible for developing this project, 
 
 ## Testing
 
-Before the production build of the calculator was launched, I conducted user testing to understand what users liked and didn't like about the design, interface, and overall experience. I was then able to incorporate the feedback into the project, which improved the overall experience.
+Before the production build of the calculator was deployed, I conducted user testing to understand what users liked and didn't like about the design, interface, and overall experience. I was then able to incorporate the feedback into the project, which improved the overall experience.
 
 ### What did users like?
 
@@ -113,7 +115,7 @@ Before testing, the sliders did not display the range’s minimum and maximum va
 
 The final direct mail ROI calculator is an effective sales tool. The experience successfully explains the long-term benefits of direct mail. The range sliders provided an intuitive way for users to input their unique values on both mobile devices and computer monitors.
 
-I’m very satisfied with the final look of this project. The user interface is modern and takes advantage of user interaction (not text) to tell the desired story, direct mail is a great investment.
+I’m very satisfied with the final look of this project. The user interface is modern and takes advantage of user interaction (not text) to tell the desired story, that direct mail is a great investment.
 
 I enjoyed developing this project with React. Coding the range sliders was a great way to practice state management. Using the components I created for this interface, it would be simple to create ROI calculators in the future for different industries.
 

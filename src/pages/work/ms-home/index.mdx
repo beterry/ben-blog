@@ -1,6 +1,6 @@
 ---
 title: Redesigning Mail Shark's Homepage
-description: A redesign of Mail Shark's homepage
+description: The planning, designing, and prototyping of a new, redesigned homepage for 2020.
 date: 2020-07-11
 code: https://github.com/beterry/ms-home
 deployed: https://beterry.github.io/ms-home/
@@ -29,7 +29,7 @@ I first meet with the President of Mail Shark, the Marketing VP, and the Creativ
 
 In short, the content on the existing page was adequate, however, it needed to be organized to include less text and include updated brand components.
 
-### Goals
+#### Goals
 
 1. Provide a concise description of the company and easily provide a way to learn more
 2. Show the user why Mail Shark is better than the competition
@@ -45,6 +45,7 @@ During the wireframing process, I re-organized the existing information and brai
         props.data.wire.edges[1].node.childImageSharp.fluid,
     ]}
 />
+<p class="caption">The approved wireframe layout for the new homepage design.</p>
 
 #### Describing Mail Shark
 There was not a clear `<h1>` on the previous homepage design. The old design used a foldable component which, according to analytic data, was never used by viewers.
@@ -59,13 +60,13 @@ During wireframing, I condensed the existing paragraphs of information into a co
 - No Money Down
 - Free Professional Design
 
-To draw the viewer’s eye to each differentiator, I planned to design branded icons.
+To draw the viewer’s eye to each differentiator, I planned to use branded icons.
 
 #### How it works
 
 I wanted to display Mail Shark’s enrollment process in a creative way. I wireframed a section which reads like a text conversation between a sales representative and a customer. This layout accomplishes two things:
 
-1. Shows how easy Mail Shark makes enrolling in a direct mail campaign
+1. Shows how easy Mail Shark makes using direct mail
 2. Displays the high-quality customer service one gets when working with Mail Shark
 
 #### Mobile components
@@ -82,10 +83,11 @@ Adobe XD is my preferred software for designing and prototyping interfaces. I us
         props.data.proto.edges[1].node.childImageSharp.fluid,
     ]}
 />
+<p class="caption">The finished design for Mail Shark's homepage.</p>
 
 ## Developing the prototype
 
-After the design was completed, I developed a prototype to further show the effectiveness of the new components, layout, and branding. 
+After the design was completed, I developed a prototype to further show the effectiveness of the new components, layout, and branding. Although Adobe XD has powerful prototyping features, I wanted to develop the prototype with web technology as coding practice.
 
 <LinkOutButton url="https://beterry.github.io/ms-home/">View the Prototype</LinkOutButton>
 <LinkOutButton url="https://github.com/beterry/ms-home">View Github Repo</LinkOutButton>
@@ -200,8 +202,8 @@ By reorganizing the existing information into modern-looking card components, I 
         props.data.proto.edges[1].node.childImageSharp.fluid,
     ]}
     before
-    caption='The old homepage (left) was reorganized and redesigned into a mobile-friendly, great looking home page (right).'
 />
+<p class="caption">The old homepage (left) was reorganized and redesigned into a mobile-friendly, great looking home page (right).</p>
 
 export const pageQuery = graphql`
     query msHomeQuery{

@@ -5,29 +5,26 @@ import Img from 'gatsby-image'
 //styles
 // import colors from '../styles/colors'
 
-export default function Screens({images, before, caption}) {
+export default function Screens({images, before}) {
     return (
-        <>
-            <Container>
-                <Grid before={before}>
-                    <ImageContainer>
-                        <Img
-                            fluid={images[0]}
-                            alt='screenshot' 
-                            style={{boxShadow: '0 0 2px rgba(0,0,0,.2)'}}
-                        />
-                    </ImageContainer>
-                    <ImageContainer>
-                        <Img
-                            fluid={images[1]}
-                            alt='screenshot'
-                            style={{boxShadow: '0 0 2px rgba(0,0,0,.2)'}}
-                        />
-                    </ImageContainer>
-                </Grid>
-            </Container>
-            {caption ? <p class='caption'>{caption}</p> : null}
-        </>
+        <Container>
+            <Grid before={before}>
+                <ImageContainer>
+                    <Img
+                        fluid={images[0]}
+                        alt='screenshot' 
+                        style={{boxShadow: '0 0 2px rgba(0,0,0,.2)'}}
+                    />
+                </ImageContainer>
+                <ImageContainer>
+                    <Img
+                        fluid={images[1]}
+                        alt='screenshot'
+                        style={{boxShadow: '0 0 2px rgba(0,0,0,.2)'}}
+                    />
+                </ImageContainer>
+            </Grid>
+        </Container>
     )
 }
 
