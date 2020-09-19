@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from 'styled-components'
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 //layout components
@@ -24,7 +23,7 @@ const Homepage = ({ data }) => {
     console.log(data)
 
   return (
-    <Layout>
+    <>
         <SEO title="Portfolio" />
         <Hero ben={ben}/>
         <Padding />
@@ -50,7 +49,7 @@ const Homepage = ({ data }) => {
             <Padding />
         </Margins>
         <Padding />    
-    </Layout>
+    </>
   )
 }
 
