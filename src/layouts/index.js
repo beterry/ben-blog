@@ -5,12 +5,14 @@ import "normalize.css"
 import '../styles/ben-fonts.css'
 
 import TopBar from '../components/topBar'
+import Footer from '../components/footer'
 
 export default function Layout({ children }) {
   return (
     <Wrapper>
         <TopBar />
         <main>{children}</main>
+        <Footer />
     </Wrapper>
   )
 }
