@@ -65,6 +65,9 @@ const Left = styled.div`
             order: 2;
         }
     }
+    @media screen and (min-width: 48rem){
+        max-width: 28rem;
+    }
     @media screen and (min-width: 67.5rem){
         max-width: 32rem;
     }
@@ -74,7 +77,7 @@ const Right = styled.div`
     flex-grow: 1;
     display: none;
     opacity: .5;
-    @media screen and (min-width: 67.5rem){
+    @media screen and (min-width: 48rem){
         display: block;
     }
 `
@@ -103,7 +106,7 @@ const Highlight = styled.div`
         right: calc((100% - 4rem));
         background: linear-gradient(to right, ${colors.blue.main}, ${colors.green.main});
         border-radius: 2rem;
-        animation: ${extend} 1s linear 1;
+        animation: ${extend} .4s linear 1;
         animation-fill-mode: forwards;
         /* animation-delay: .5s; */
     }
@@ -120,6 +123,7 @@ const Highlight = styled.div`
 const ImageContainer = styled.div`
     margin: 0 auto;
     max-width: 30rem;
+    min-width: 25rem;
 `
 
 
