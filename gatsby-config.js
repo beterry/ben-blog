@@ -93,5 +93,6 @@ module.exports = {
         },
         `gatsby-plugin-mdx-source-name`,
         `gatsby-plugin-layout`,
+        `gatsby-plugin-styled-components`,
     ],
 }
