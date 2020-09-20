@@ -10,6 +10,7 @@ import WorkLayout from '../components/layouts/work-body'
 //utility components
 import SEO from "../components/seo"
 import Padding from '../components/padding'
+import moment from 'moment'
 
 //components
 import {ArticleInfo, InfoSection, Info} from '../components/article-info'
@@ -37,7 +38,7 @@ export default ({ children, pageContext }) => (
                     <ArticleInfo>
                         <InfoSection title='About'>
                             <Info title='Type'>{pageContext.frontmatter.type}</Info>
-                            <Info title='Written'>{pageContext.frontmatter.date}</Info>
+                            <Info title='Written'>{moment(pageContext.frontmatter.date).format("MMMM DD, YYYY")}</Info>
                         </InfoSection>
                         <InfoSection title='Links'>
                             <LinkSide url={pageContext.frontmatter.code}>Code on Github</LinkSide>
