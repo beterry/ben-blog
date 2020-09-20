@@ -21,10 +21,10 @@ export default styled.div`
 
     .gatsby-resp-image-wrapper{
         margin: 2.25rem 0;
-        border-radius: .125rem;
+        border-radius: .25rem;
         overflow: hidden;
-        /* box-shadow: 0 0 10px rgba(0,0,0,.25); */
-        border: 1px solid #a7a7a7;
+        box-shadow: 0 0 10px rgba(0,0,0,.25);
+        /* border: 1px solid #a7a7a7; */
     }
 
     .gatsby-highlight{
