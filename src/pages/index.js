@@ -22,7 +22,7 @@ const Homepage = ({ data }) => {
 
   return (
     <>
-        <SEO title="Portfolio" />
+        <SEO title="Portfolio" description="Ben Terry, Front-end Developer & Web Designer"/>
         <Hero ben={ben}/>
         <Padding />
         <Margins>

@@ -106,9 +106,9 @@ const Highlight = styled.div`
         right: calc((100% - 4rem));
         background: linear-gradient(to right, ${colors.blue.main}, ${colors.green.main});
         border-radius: 2rem;
-        animation: ${extend} .4s linear 1;
+        animation: ${extend} .2s linear 1;
         animation-fill-mode: forwards;
-        /* animation-delay: .5s; */
+        animation-delay: 1s;
     }
     h2{
         margin: 0;

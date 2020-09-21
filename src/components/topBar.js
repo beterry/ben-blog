@@ -28,7 +28,7 @@ export default class TopBar extends Component {
                             </Link>
                         </Left>
                         <Right>
-                            <IconButton as='a' href='mailto:benterry.design@gmail.com'><img src={mail} alt='Email' /></IconButton>
+                            <IconButton as='a' href='mailto:benterry.dev@gmail.com'><img src={mail} alt='Email' /></IconButton>
                             <IconButton as='a' href='https://github.com/beterry' target='_blank'><img src={github} alt='Github' /></IconButton>
                         </Right>
                     </FlexWrapper>

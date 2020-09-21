@@ -21,7 +21,7 @@ export default class Footer extends Component {
                 <Margins>
                     <FlexWrapper> 
                         <HomeButton to='/'><img src={home} alt='Email' /></HomeButton>
-                        <IconButton as='a' href='mailto:benterry.design@gmail.com'><img src={mail} alt='Email' /></IconButton>
+                        <IconButton as='a' href='mailto:benterry.dev@gmail.com'><img src={mail} alt='Email' /></IconButton>
                         <IconButton as='a' href='https://github.com/beterry' target='_blank'><img src={github} alt='Github' /></IconButton>
                     </FlexWrapper>
                 </Margins>
