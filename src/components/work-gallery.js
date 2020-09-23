@@ -11,7 +11,6 @@ const Work = ({title, date, fluid}) => (
             <Img fluid={fluid} alt='Screenshot of project' />
         </ImageContainer>
         <h3>{title}</h3>
-        <p>{date}</p>
     </GridItem>
 )
 
@@ -37,11 +36,6 @@ const Grid = styled.ul`
     h3{
         font-size: 1.25rem;
         margin: 1rem 0 0 0;
-    }
-
-    p{
-        margin: .5rem 0 0 0;
-        color: ${colors.gray[60]};
     }
 
     a{

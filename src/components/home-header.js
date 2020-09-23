@@ -23,7 +23,7 @@ export default function homeHeader({ ben }) {
                                 <div />
                             </Highlight>
                         </hgroup>
-                        <p>I’m a creative professional with a great love for designing and developing great web experiences. This is my portfolio where I write about technology and design.</p>
+                        <Description>I’m a creative professional who loves designing and developing great web experiences. This is my portfolio where I write about my recent work and the technology I'm currently using and learning.</Description>
                         <Padding />
                     </Left>
                     <Right>
@@ -103,12 +103,13 @@ const Highlight = styled.div`
         height: 4rem;
         position: absolute;
         left: 0;
-        right: calc((100% - 4rem));
+        /* right: calc((100% - 4rem)); */
+        right: 0;
         background: linear-gradient(to right, ${colors.blue.main}, ${colors.green.main});
         border-radius: 2rem;
-        animation: ${extend} .2s linear 1;
+        /* animation: ${extend} .2s linear 1;
         animation-fill-mode: forwards;
-        animation-delay: 1s;
+        animation-delay: 1s; */
     }
     h2{
         margin: 0;
@@ -122,8 +123,11 @@ const Highlight = styled.div`
 
 const ImageContainer = styled.div`
     margin: 0 auto;
-    max-width: 30rem;
-    min-width: 25rem;
+    width: 30rem;
 `
 
-
+const Description = styled.p`
+    color: white;
+    font-size: 1.25rem;
+    line-height: 1.5;
+`
