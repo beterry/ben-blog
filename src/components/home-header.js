@@ -17,7 +17,7 @@ export default function homeHeader({ ben }) {
                     <Left>
                         <Padding />
                         <hgroup>
-                            <h1>Front-end Developer & Web Designer</h1>
+                            <h1>UI/UX Designer & Front-end Developer</h1>
                             <Highlight>
                                 <h2>Hi, my name is Ben.</h2>
                                 <div />
