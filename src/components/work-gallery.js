@@ -34,7 +34,8 @@ const Grid = styled.ul`
     padding-inline-start: 0;
 
     h3{
-        font-size: 1.25rem;
+        font-size: 1.125rem;
+        line-height: 1.5;
         margin: 1rem 0 0 0;
     }
 

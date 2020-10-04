@@ -7,9 +7,9 @@ const Button = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 3rem;
+    min-height: 2.5rem;
     min-width: 4rem;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     flex: 0 0 auto;
     font-size: .875rem;
     letter-spacing: 1px;
@@ -18,15 +18,16 @@ const Button = styled.button`
     cursor: pointer;
     background: none;
     text-decoration: none;
+    transition: all .2s;
 `
 
 const ContainedButton = styled(Button)`
-    background: linear-gradient(to right, ${colors.blue.main}, ${colors.green.main});
+    background: ${colors.blue.main};
     color: white;
-    border-radius: 1.5rem;
-    text-shadow: 0 2px 2px ${colors.gray[20]};
+    border-radius: .25rem;
     &:hover{
-        background: linear-gradient(to right, ${colors.blue.main}, ${colors.blue.main});
+        background: ${colors.blue.light};
+        box-shadow: 0 2px 3px ${colors.gray[20]};
     }
 `
 
@@ -53,7 +54,7 @@ const IconButton = styled.button`
     border-radius: 50%;
     background: none;
     color: ${props => props.white ? 'white' : 'black'};
-    transition: transform .35s;
+    transition: all .2s;
     &:hover{
         background: ${colors.blue.main};
     }

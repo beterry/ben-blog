@@ -19,7 +19,7 @@ function BlogPreview({ title, date, type, slug }) {
         <Link to={slug}>
             <Preview>
                 <Meta>
-                    <Type>{type}</Type>
+                    {/* <Type>{type}</Type> */}
                     <Date>{date}</Date>
                 </Meta>
                 <h3>{title}</h3>
@@ -36,6 +36,7 @@ const List = styled.ul`
     margin-inline-end: 0;
     padding-inline-start: 0;
     margin-top: 1rem;
+    position: relative;
     a{
         color: inherit;
         text-decoration: none;
@@ -46,9 +47,13 @@ const Preview = styled.li`
     padding: 1rem;
     border-radius: .25rem;
     cursor: pointer;
+    width: calc(100% + 2rem);
+    position: relative;
+    left: -1rem;
     h3{
         margin: 0;
-        font-size: 1.25rem;
+        font-size: 1.125rem;
+        line-height: 1.5;
     }
     &:hover{
         background: ${colors.green.opacity[10]};
@@ -58,7 +63,7 @@ const Preview = styled.li`
 const Meta = styled.div`
     display: flex;
     align-items: center;
-    margin-bottom: .5rem;
+    margin-bottom: .15rem;
     p{
         margin: 0;
     }
@@ -77,5 +82,5 @@ const Type = styled.p`
 
 const Date = styled.p`
     font-size: .875rem;
-    color: ${colors.gray[50]};
+    color: ${colors.green.main};
 `

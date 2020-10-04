@@ -53,6 +53,7 @@ const Left = styled.div`
 
     @media screen and (min-width: 67.5rem){
         max-width: 32rem;
+        padding-right: 2rem;
         order: 1;
     }
 `
@@ -71,8 +72,9 @@ const Title = styled.h1`
 
 const Description = styled.p`
     color: white;
-    font-size: 1.25rem;
-    line-height: 1.5;
+    opacity: .85;
+    font-size: 1.15rem;
+    line-height: 1.75;
 `
 
 const ImageWrapper = styled.div`

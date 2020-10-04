@@ -11,11 +11,11 @@ export default styled.div`
     }
 
     ol, ul{
-        margin: 2rem 0;
+        margin: 1rem 0;
     }
 
     ol li, ul li{
-        margin: .75rem 0; 
+        margin: .175rem 0; 
         line-height: 1.5;
     }
 
@@ -29,6 +29,7 @@ export default styled.div`
 
     .gatsby-highlight{
         margin: 2.25rem 0;
+        box-shadow: 0 0 10px rgba(0,0,0,.25);
     }
 
     blockquote{

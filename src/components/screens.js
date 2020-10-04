@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 
 //styles
-// import colors from '../styles/colors'
+import colors from '../styles/colors'
 
 export default function Screens({images, before}) {
     return (
@@ -32,8 +32,9 @@ const Container = styled.div`
     position: relative;
     margin: 2.25rem 0;
     background: #E4E4E4;
+    border: 1px solid ${colors.gray[10]};
     padding: 5%;
-    border-radius: .5rem;
+    border-radius: .25rem;
     z-index: 2;
 `
 

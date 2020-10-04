@@ -3,7 +3,7 @@ ol, ul{
 }
 
 ol li, ul li{
-   margin: .75rem 0; 
+   margin: .5rem 0; 
    line-height: 1.5;
 }
 

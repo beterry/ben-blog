@@ -128,6 +128,7 @@ const ImageContainer = styled.div`
 
 const Description = styled.p`
     color: white;
-    font-size: 1.25rem;
-    line-height: 1.5;
+    opacity: .85;
+    font-size: 1.15rem;
+    line-height: 1.75;
 `
