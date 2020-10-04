@@ -1,0 +1,151 @@
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+ :root{
+    --main-blue: #118AB2;
+    --light-blue: #5CD6FF;
+    --dark-blue: #073B4C;
+    --main-green: #1BC196;
+    --main-orange: #ff9a76;
+    --background: #272727;
+    --background-light: #f6f8fb;
+    --borer-light: #D1D1D1;
+ }
+
+ code[class*="language-"],
+ pre[class*="language-"] {
+     color: white;
+     background: none;
+     font-family: 'Roboto Mono', monospace;
+     font-size: .875rem;
+     text-align: left;
+     white-space: pre;
+     word-spacing: normal;
+     word-break: normal;
+     word-wrap: normal;
+     line-height: 1.5;
+
+     border-radius: .25rem;
+
+     text-shadow: none;
+ 
+     -moz-tab-size: 4;
+     -o-tab-size: 4;
+     tab-size: 4;
+ 
+     -webkit-hyphens: none;
+     -moz-hyphens: none;
+     -ms-hyphens: none;
+     hyphens: none;
+ 
+ }
+ 
+ /* Code blocks */
+ pre[class*="language-"] {
+     padding: 2rem;
+     margin: .5em 0;
+     overflow: auto;
+ }
+ 
+ :not(pre) > code[class*="language-"],
+ pre[class*="language-"] {
+     background: var(--background);
+ }
+ 
+ /* Inline code */
+ :not(pre) > code[class*="language-"] {
+     padding: .1em .3rem;
+     border-radius: .25rem;
+     white-space: normal;
+     color: black;
+     background: var(--background-light);
+     border: 1px solid var(--borer-light);
+ }
+
+ .language-js{
+     color: var(--light-blue) !important;
+ }
+ 
+ .token.comment,
+ .token.block-comment,
+ .token.prolog,
+ .token.doctype,
+ .token.cdata {
+     color: #1BC196;
+ }
+ 
+ .token.punctuation {
+     color: white;
+ }
+ 
+ .token.attr-name,
+ .token.namespace,
+ .token.deleted {
+     color: #38B1D9;
+ }
+
+ .token.tag{
+     color: var(--main-blue);
+ }
+ 
+ .token.function-name {
+     color: #6196cc;
+ }
+ 
+ .token.boolean,
+ .token.number,
+ .token.function {
+     color: #ffefa0;
+ }
+ 
+ .token.property,
+ .token.class-name,
+ .token.constant,
+ .token.symbol {
+     color: #f8c555;
+ }
+ 
+ .token.selector,
+ .token.important,
+ .token.atrule,
+ .token.keyword,
+ .token.builtin {
+     color: #118AB2;
+ }
+ 
+ .token.char,
+ .token.regex,
+ .token.variable {
+     color: white;
+ }
+
+ .token.attr-value,
+ .token.string{
+     color: #ff9a76;
+ }
+ 
+ .token.operator,
+ .token.entity,
+ .token.url {
+     color: white;
+     background: none;
+ }
+ 
+ .token.important,
+ .token.bold {
+     font-weight: bold;
+ }
+ .token.italic {
+     font-style: italic;
+ }
+ 
+ .token.entity {
+     cursor: help;
+ }
+ 
+ .token.inserted {
+     color: green;
+ }
