@@ -38,7 +38,7 @@ export default ({ children, pageContext }) => (
                     <ArticleInfo>
                         <InfoSection title='About'>
                             <Info title='Type'>{pageContext.frontmatter.type}</Info>
-                            <Info title='Written'>{moment(pageContext.frontmatter.date).format("MMMM DD, YYYY")}</Info>
+                            <Info title='Written'>{moment(pageContext.frontmatter.date).format("MMMM Do, YYYY")}</Info>
                         </InfoSection>
                         <InfoSection title='Links'>
                             <LinkSide url={pageContext.frontmatter.code}>Code on Github</LinkSide>

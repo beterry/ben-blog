@@ -46,7 +46,7 @@ export default ({ children, pageContext, data }) => {
                                 <InfoSection title='About'>
                                     <Info title='Company'>Mail Shark</Info>
                                     <Info title='Position'>UI / UX Designer I</Info>
-                                    <Info title='Started'>{moment(pageContext.frontmatter.date).format("MMMM DD, YYYY")}</Info>
+                                    <Info title='Started'>{moment(pageContext.frontmatter.date).format("MMMM Do, YYYY")}</Info>
                                 </InfoSection>
                                 <InfoSection title='Links'>
                                     <LinkSide url={pageContext.frontmatter.code}>Code on Github</LinkSide>
