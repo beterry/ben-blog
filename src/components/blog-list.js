@@ -19,7 +19,6 @@ function BlogPreview({ title, date, type, slug }) {
         <Link to={slug}>
             <Preview>
                 <Meta>
-                    {/* <Type>{type}</Type> */}
                     <Date>{date}</Date>
                 </Meta>
                 <h3>{title}</h3>
@@ -70,14 +69,6 @@ const Meta = styled.div`
     p:first-child{
         margin-right: 1rem;
     }
-`
-
-const Type = styled.p`
-    font-size: .875rem;
-    color: ${colors.green.main};
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
 `
 
 const Date = styled.p`

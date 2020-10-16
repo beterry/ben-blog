@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import colors from '../styles/colors'
+import {Link} from 'gatsby'
 
 import {ContainedButton} from './buttons'
 
@@ -37,4 +38,12 @@ const LinkOut = styled(LinkOutBase)`
     }
 `
 
-export {LinkOutButton, LinkSide, LinkOut}
+const LinkIn = styled(Link)`
+    color: ${colors.green.main};
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+    }
+`
+
+export {LinkOutButton, LinkSide, LinkOut, LinkIn}

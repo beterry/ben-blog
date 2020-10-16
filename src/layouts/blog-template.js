@@ -1,7 +1,6 @@
 import React from "react"
 
 import { MDXProvider } from "@mdx-js/react"
-import { Link } from "gatsby"
 
 //layout components
 import Margins from '../components/layouts/margins'
@@ -14,12 +13,12 @@ import moment from 'moment'
 
 //components
 import {ArticleInfo, InfoSection, Info} from '../components/article-info'
-import {LinkOutButton, LinkSide, LinkOut} from '../components/links'
+import {LinkOutButton, LinkSide, LinkOut, LinkIn} from '../components/links'
 
 //import styles
 import ContentStyleWrapper from '../styles/content-style-wrapper'
 
-const shortcodes = { Link, LinkOutButton, LinkOut }
+const shortcodes = { LinkOutButton, LinkOut, LinkIn }
 
 export default ({ children, pageContext }) => (
     <>
@@ -40,10 +39,13 @@ export default ({ children, pageContext }) => (
                             <Info title='Type'>{pageContext.frontmatter.type}</Info>
                             <Info title='Written'>{moment(pageContext.frontmatter.date).format("MMMM Do, YYYY")}</Info>
                         </InfoSection>
-                        <InfoSection title='Links'>
-                            <LinkSide url={pageContext.frontmatter.code}>Code on Github</LinkSide>
-                            <LinkSide url={pageContext.frontmatter.deployed}>Finished Experiment</LinkSide>
-                        </InfoSection>
+                        {pageContext.frontmatter.code || pageContext.frontmatter.deployed ?
+                            <InfoSection title='Links'>
+                                {pageContext.frontmatter.code && <LinkSide url={pageContext.frontmatter.code}>Code on Github</LinkSide>}
+                                {pageContext.frontmatter.deployed && <LinkSide url={pageContext.frontmatter.deployed}>Finished Experiment</LinkSide>}
+                            </InfoSection>:
+                            null
+                        }
                     </ArticleInfo>
                     <ContentStyleWrapper>
                         <MDXProvider components={shortcodes}>{children}</MDXProvider>
