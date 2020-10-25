@@ -20,4 +20,10 @@ export default function Layout({ children }) {
 
 const Wrapper = styled.div`
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    main{
+        flex-grow: 1;
+    }
 `

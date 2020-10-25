@@ -23,7 +23,7 @@ function BlogPreview({ title, date, type, slug, tags }) {
                 </Meta>
                 <h3>{title}</h3>
                 <TagList>
-                    {tags.map(tag => <Tag>{tag}</Tag>)}
+                    {tags.map((tag, index) => <Tag key={index}>{tag}</Tag>)}
                 </TagList>
             </Preview>
         </Link>
