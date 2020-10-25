@@ -15,7 +15,7 @@ import moment from 'moment'
 //components
 import WorkHeader from '../components/work-header'
 import Screens from '../components/screens'
-import {ArticleInfo, Info} from '../components/article-info'
+import {ArticleInfo, Info, DateWritten, TagList, DemoButton, CodeButton} from '../components/article-info'
 import {LinkOutButton, LinkSide} from '../components/links'
 
 //import styles
@@ -43,7 +43,19 @@ export default ({ children, pageContext, data }) => {
                     <Margins>
                         <WorkLayout>
                             <ArticleInfo>
-                                
+                                <Info title='Updated'><DateWritten>{moment(pageContext.frontmatter.date).format("MMMM D, YYYY")}</DateWritten></Info>
+                                <Info title='Tags'>
+                                    <TagList>
+                                        {pageContext.frontmatter.tags.map((tag, index) => <li key={index}>{tag}</li>)}
+                                    </TagList>
+                                </Info>
+                                {pageContext.frontmatter.code || pageContext.frontmatter.deployed ?
+                                    <Info title='Skip Ahead'>
+                                        {pageContext.frontmatter.deployed && <DemoButton as='a' target='_blank' rel='noreferrer noopener' href={pageContext.frontmatter.deployed}>View Demo</DemoButton>}
+                                        {pageContext.frontmatter.code && <CodeButton as='a' target='_blank' rel='noreferrer noopener' href={pageContext.frontmatter.code}>Code on Github</CodeButton>}
+                                    </Info>:
+                                null
+                                }
                             </ArticleInfo>
                             <ContentStyleWrapper>
                                 <MDXProvider components={shortcodes}>{children}</MDXProvider>

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import colors from '../styles/colors'
 
-import {ContainedButton} from '../components/buttons'
+import {ContainedButton, OutlineButton, TextButton} from '../components/buttons'
 
 const Info = ({title, children}) => (
     <InfoWrapper>
@@ -15,19 +15,19 @@ const ArticleInfo = styled.div`
     margin-bottom: 4rem;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
     @media screen and (min-width: 37.5rem){
-        grid-template-columns: 1fr 1fr;
-        
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
     }
     @media screen and (min-width: 73.75rem){
         position: absolute;
         z-index: 0;
         top: 0;
         right: 0;
-        left: 53rem;
+        left: 52rem;
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
     }
 `
 
@@ -35,10 +35,7 @@ const InfoWrapper = styled.div`
     h5{
         font-size: 1rem;
         font-weight: 700;
-        margin-bottom: .5rem;
-    }
-    p{
-        margin: 0;
+        margin-bottom: 1rem;
     }
 `
 
@@ -62,11 +59,19 @@ const TagList = styled.ul`
 
 const DateWritten = styled.p`
     color: ${colors.gray[50]};
+    margin: 0;
+    line-height: 1;
 `
 
-const ArticleInfoLinkOut = styled(ContainedButton)`
+const DemoButton = styled(ContainedButton)`
     width: 100%;
     margin-bottom: .5rem;
 `
 
-export {ArticleInfo, Info, TagList, DateWritten, ArticleInfoLinkOut}
+
+const CodeButton = styled(TextButton)`
+    width: 100%;
+    margin-bottom: .5rem;
+`
+
+export {ArticleInfo, Info, TagList, DateWritten, DemoButton, CodeButton}

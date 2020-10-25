@@ -12,7 +12,7 @@ import Padding from '../components/padding'
 import moment from 'moment'
 
 //components
-import {ArticleInfo, Info, DateWritten, TagList, ArticleInfoLinkOut} from '../components/article-info'
+import {ArticleInfo, Info, DateWritten, TagList, DemoButton, CodeButton} from '../components/article-info'
 import {LinkOutButton, LinkSide, LinkOut, LinkIn} from '../components/links'
 
 //import styles
@@ -43,8 +43,8 @@ export default ({ children, pageContext }) => (
                         </Info>
                         {pageContext.frontmatter.code || pageContext.frontmatter.deployed ?
                             <Info title='Skip Ahead'>
-                                {pageContext.frontmatter.code && <ArticleInfoLinkOut as='a' target='_blank' rel='noreferrer noopener' href={pageContext.frontmatter.code}>Code on Github</ArticleInfoLinkOut>}
-                                {pageContext.frontmatter.deployed && <ArticleInfoLinkOut as='a' target='_blank' rel='noreferrer noopener' href={pageContext.frontmatter.deployed}>View Demo</ArticleInfoLinkOut>}
+                                {pageContext.frontmatter.deployed && <DemoButton as='a' target='_blank' rel='noreferrer noopener' href={pageContext.frontmatter.deployed}>View Demo</DemoButton>}
+                                {pageContext.frontmatter.code && <CodeButton as='a' target='_blank' rel='noreferrer noopener' href={pageContext.frontmatter.code}>Code on Github</CodeButton>}
                             </Info>:
                             null
                         }

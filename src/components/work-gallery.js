@@ -3,14 +3,20 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 import {Link} from 'gatsby'
 
+//import components
+import TagList from './tag-list'
+
 import colors from '../styles/colors'
 
-const Work = ({title, date, fluid}) => (
+const Work = ({title, date, tags, fluid}) => (
     <GridItem>
         <ImageContainer>
             <Img fluid={fluid} alt='Screenshot of project' />
         </ImageContainer>
         <h3>{title}</h3>
+        <TagList>
+            {tags.map((tag, index) => <li key={index}>{tag}</li>)}
+        </TagList>
     </GridItem>
 )
 
@@ -18,7 +24,7 @@ export default function WorkGallery({works}) {
     return (
         <Grid>
             {works.map((work) => 
-                <Link key={work.title} to={work.slug}><Work title={work.title} date={work.date} fluid={work.display.childImageSharp.fluid}/></Link>
+                <Link key={work.title} to={work.slug}><Work title={work.title} date={work.date} tags={work.tags} fluid={work.display.childImageSharp.fluid}/></Link>
             )}
         </Grid>
     )
@@ -36,7 +42,7 @@ const Grid = styled.ul`
     h3{
         font-size: 1.125rem;
         line-height: 1.5;
-        margin: 1rem 0 0 0;
+        margin: 1rem 0 .5rem 0;
     }
 
     a{
@@ -54,7 +60,7 @@ const GridItem = styled.li`
     cursor: pointer;
     &:hover{
         h3{
-            color: ${colors.green.main};
+            color: ${colors.blue.light};
         }
     }
 `

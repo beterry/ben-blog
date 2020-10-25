@@ -32,14 +32,23 @@ const ContainedButton = styled(Button)`
     }
 `
 
-const TextButton = styled(Button)`
-    color: ${props => props.white ? 'white' : colors.p.main};
-    padding: ${props => props.icon ? '0 1rem 0 .5rem' : null};
-    & *:first-child{
-        margin-right: .25rem;
-    }
+const OutlineButton = styled(Button)`
+    background: none;
+    color: ${colors.blue.light};
+    border-radius: .25rem;
+    border: 2px solid ${colors.blue.light};
     &:hover{
-        background: ${colors.p.dark};
+        background: ${colors.blue.light};
+        color: white;
+    }
+`
+
+const TextButton = styled(Button)`
+    color: ${props => props.white ? 'white' : colors.blue.main};
+    padding: ${props => props.icon ? '0 1rem 0 .5rem' : null};
+    border-radius: .25rem;
+    &:hover{
+        background: ${colors.blue.opacity[20]};
     }
 `
 
@@ -64,4 +73,4 @@ const IconButton = styled.button`
     }
 `
 
-export {ContainedButton, TextButton, IconButton}
+export {ContainedButton, OutlineButton, TextButton, IconButton}
