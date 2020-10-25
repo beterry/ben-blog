@@ -7,9 +7,10 @@ const Button = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     min-height: 2.5rem;
     min-width: 4rem;
-    padding: 0 1rem;
+    padding: .5rem 1rem;
     flex: 0 0 auto;
     font-size: .875rem;
     letter-spacing: 1px;

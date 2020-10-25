@@ -59,7 +59,7 @@ const TagList = styled.ul`
 
 const Tag = styled.li`
     background: ${colors.blue.opacity[20]};
-    font-size: .75rem;
+    font-size: .875rem;
     padding: .25rem .5rem;
     border-radius: .25rem;
     margin-right: .25rem;

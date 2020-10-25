@@ -12,7 +12,7 @@ import Padding from '../components/padding'
 import moment from 'moment'
 
 //components
-import {ArticleInfo, InfoSection, Info} from '../components/article-info'
+import {ArticleInfo, Info, DateWritten, TagList, ArticleInfoLinkOut} from '../components/article-info'
 import {LinkOutButton, LinkSide, LinkOut, LinkIn} from '../components/links'
 
 //import styles
@@ -35,15 +35,17 @@ export default ({ children, pageContext }) => (
                     </header>
                     <Padding />
                     <ArticleInfo>
-                        <InfoSection title='About'>
-                            <Info title='Type'>{pageContext.frontmatter.type}</Info>
-                            <Info title='Written'>{moment(pageContext.frontmatter.date).format("MMMM Do, YYYY")}</Info>
-                        </InfoSection>
+                        <Info title='Updated'><DateWritten>{moment(pageContext.frontmatter.date).format("MMMM D, YYYY")}</DateWritten></Info>
+                        <Info title='Tags'>
+                            <TagList>
+                                {pageContext.frontmatter.tags.map((tag, index) => <li key={index}>{tag}</li>)}
+                            </TagList>
+                        </Info>
                         {pageContext.frontmatter.code || pageContext.frontmatter.deployed ?
-                            <InfoSection title='Links'>
-                                {pageContext.frontmatter.code && <LinkSide url={pageContext.frontmatter.code}>Code on Github</LinkSide>}
-                                {pageContext.frontmatter.deployed && <LinkSide url={pageContext.frontmatter.deployed}>Finished Experiment</LinkSide>}
-                            </InfoSection>:
+                            <Info title='Skip Ahead'>
+                                {pageContext.frontmatter.code && <ArticleInfoLinkOut as='a' target='_blank' rel='noreferrer noopener' href={pageContext.frontmatter.code}>Code on Github</ArticleInfoLinkOut>}
+                                {pageContext.frontmatter.deployed && <ArticleInfoLinkOut as='a' target='_blank' rel='noreferrer noopener' href={pageContext.frontmatter.deployed}>View Demo</ArticleInfoLinkOut>}
+                            </Info>:
                             null
                         }
                     </ArticleInfo>
