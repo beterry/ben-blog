@@ -8,13 +8,13 @@ export default function BlogList({posts}) {
     return (
         <List>
             {posts.map((post) => 
-                <BlogPreview title={post.title} date={post.date} type={post.type} slug={post.slug} key={post.title} />
+                <BlogPreview title={post.title} date={post.date} type={post.type} slug={post.slug} key={post.title} tags={post.tags}/>
             )}
         </List>
     )
 }
 
-function BlogPreview({ title, date, type, slug }) {
+function BlogPreview({ title, date, type, slug, tags }) {
     return (
         <Link to={slug}>
             <Preview>
@@ -22,6 +22,9 @@ function BlogPreview({ title, date, type, slug }) {
                     <Date>{date}</Date>
                 </Meta>
                 <h3>{title}</h3>
+                <TagList>
+                    {tags.map(tag => <Tag>{tag}</Tag>)}
+                </TagList>
             </Preview>
         </Link>
     )
@@ -42,6 +45,26 @@ const List = styled.ul`
     }
 `
 
+const TagList = styled.ul`
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+`
+
+const Tag = styled.li`
+    background: ${colors.blue.opacity[20]};
+    font-size: .75rem;
+    padding: .25rem .5rem;
+    border-radius: .25rem;
+    margin-right: .25rem;
+`
+
 const Preview = styled.li`
     padding: 1rem;
     border-radius: .25rem;
@@ -52,10 +75,10 @@ const Preview = styled.li`
     h3{
         margin: 0;
         font-size: 1.125rem;
-        line-height: 1.5;
+        line-height: 1;
     }
     &:hover{
-        background: ${colors.green.opacity[10]};
+        background: ${colors.blue.opacity[5]};
     }
 `
 
@@ -73,5 +96,5 @@ const Meta = styled.div`
 
 const Date = styled.p`
     font-size: .875rem;
-    color: ${colors.green.main};
+    color: ${colors.gray[40]};
 `
