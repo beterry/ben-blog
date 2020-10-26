@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import colors from '../styles/colors'
 
-import {ContainedButton, OutlineButton, TextButton} from '../components/buttons'
+import {ContainedButton, TextButton} from '../components/buttons'
 
 const Info = ({title, children}) => (
     <InfoWrapper>

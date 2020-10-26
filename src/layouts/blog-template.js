@@ -13,7 +13,7 @@ import moment from 'moment'
 
 //components
 import {ArticleInfo, Info, DateWritten, TagList, DemoButton, CodeButton} from '../components/article-info'
-import {LinkOutButton, LinkSide, LinkOut, LinkIn} from '../components/links'
+import {LinkOutButton, LinkOut, LinkIn} from '../components/links'
 
 //import styles
 import ContentStyleWrapper from '../styles/content-style-wrapper'

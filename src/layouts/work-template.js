@@ -16,7 +16,7 @@ import moment from 'moment'
 import WorkHeader from '../components/work-header'
 import Screens from '../components/screens'
 import {ArticleInfo, Info, DateWritten, TagList, DemoButton, CodeButton} from '../components/article-info'
-import {LinkOutButton, LinkSide} from '../components/links'
+import {LinkOutButton} from '../components/links'
 
 //import styles
 import ContentStyleWrapper from '../styles/content-style-wrapper'

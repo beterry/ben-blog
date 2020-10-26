@@ -21,8 +21,6 @@ const Homepage = ({ data }) => {
     const works = data.workQuery.edges.map(edge => ({...edge.node.frontmatter , ...edge.node.fields}))
     const ben = data.ben.fluid
 
-    console.log(posts)
-
   return (
     <>
         <SEO title="Portfolio" description="Ben Terry, Front-end Developer & Web Designer"/>
