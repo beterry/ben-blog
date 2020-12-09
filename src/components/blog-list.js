@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
+import moment from 'moment'
 
 import colors from '../styles/colors'
 
@@ -19,7 +20,7 @@ function BlogPreview({ title, date, type, slug, tags }) {
         <Link to={slug}>
             <Preview>
                 <Meta>
-                    <Date>{date}</Date>
+                    <Date>{moment(date).format("MMMM D, YYYY")}</Date>
                 </Meta>
                 <h3>{title}</h3>
                 <TagList>

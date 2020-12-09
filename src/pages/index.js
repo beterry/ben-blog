@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import styled from 'styled-components'
 
+
 import SEO from "../components/seo"
 
 //layout components
@@ -81,7 +82,7 @@ export const pageQuery = graphql`
             edges {
                 node {
                     frontmatter {
-                        date(formatString: "MMMM DD, YYYY")
+                        date
                         title
                         tags
                         display {
@@ -102,7 +103,7 @@ export const pageQuery = graphql`
             edges {
                 node {
                     frontmatter {
-                        date(formatString: "MMMM D, YYYY")
+                        date
                         title
                         type
                         tags

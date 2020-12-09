@@ -35,7 +35,7 @@ const InfoWrapper = styled.div`
     h5{
         font-size: 1rem;
         font-weight: 700;
-        margin-bottom: 1rem;
+        margin: 0 0 1rem 0;
     }
 `
 

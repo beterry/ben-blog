@@ -28,6 +28,7 @@ const colors = {
     },
     green: {
         main: '#1BC196',
+        light: '#32E3B5',
         opacity: {
             90: 'rgba(27,193,150,.9)',
             80: 'rgba(27,193,150,.8)',

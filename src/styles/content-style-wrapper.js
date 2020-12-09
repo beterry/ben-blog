@@ -32,6 +32,14 @@ export default styled.div`
         box-shadow: 0 0 10px rgba(0,0,0,.25);
     }
 
+    p > img {
+        margin: 2.25rem 0;
+        border-radius: .25rem;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0,0,0,.25);
+        width: 100%;
+    }
+
     blockquote{
         margin-block-start: 2rem;
         margin-block-end: 2rem;

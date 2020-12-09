@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, Link } from "gatsby"
 import styled from 'styled-components'
+import moment from "moment"
 
 import SEO from "../components/seo"
 
@@ -25,7 +26,7 @@ function BlogPreview({ title, date, slug, tags}) {
         <Link to={slug}>
             <Preview>
                 <TitleWrapper>
-                    <Date>{date}</Date>
+                    <Date>{moment(date).format("MMMM D, YYYY")}</Date>
                     <h3>{title}</h3>
                 </TitleWrapper>
                 <TagList>
@@ -57,7 +58,7 @@ export const blogPageQuery = graphql`
             edges {
                 node {
                     frontmatter {
-                        date(formatString: "MMMM D, YYYY")
+                        date
                         title
                         tags
                     }
